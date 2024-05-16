@@ -1,10 +1,6 @@
-/*Angie Joya - 2322609
-Johan David Pitto - 1932739
-Miguel Ángel Salcedo - 2242786
-José Daniel Trujillo - 2225611*/
-
 import java.util.concurrent._
 import scala.util.DynamicVariable
+
 package object common {
   val forkJoinPool = new ForkJoinPool
 
