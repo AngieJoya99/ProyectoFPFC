@@ -36,7 +36,7 @@ package object Itinerarios{
         case _ => None
       }
       generarItinerario(cod1, cod2, Set.empty, vuelos)
-    }
+    }    
     buscarItinerarios
   }
 
@@ -49,7 +49,10 @@ package object Itinerarios{
     * una lista de itinerarios
     */
   def itinerariosTiempo(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
-    
+    def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
+      val posibles = itinerarios(vuelos,aeropuertos)(cod1,cod2)
+    }
+    buscarItinerarios
   }
 
   /** Dada una lista de todos los vuelos disponibles y una lista 
