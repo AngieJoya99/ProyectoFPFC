@@ -1,0 +1,61 @@
+[0m[[0m[33mwarn[0m] [0m[0m[33m[33m-- Warning: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3817:1 [0m[0m[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m3817 |[0m [33mval[0m [36mvuelosD1[0m= List([0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m[33m     |[0m ^[0m[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m     |[0m Line is indented too far to the left, or a `}` is missing[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E007] Type Mismatch Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\ItinerariosPar\package.scala:54:119 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m54 |[0m  [33mdef[0m [36mitinerariosTiempoPar[0m([36mvuelos[0m: [35mList[0m[[35mVuelo[0m], [36maeropuertos[0m: [35mList[0m[[35mAeropuerto[0m]): ([35mString[0m, [35mString[0m) => [35mList[0m[[35mItinerario[0m] = {[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                                                                                                       ^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m           Found:    Unit[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m           Required: (String, String) => List[ItinerariosPar.Itinerario][0m
+[0m[[0m[31merror[0m] [0m[0m[31m55 |[0m    [0m
+[0m[[0m[31merror[0m] [0m[0m[31m56 |[0m  }[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E007] Type Mismatch Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\ItinerariosPar\package.scala:66:120 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m66 |[0m  [33mdef[0m [36mitinerariosEscalasPar[0m([36mvuelos[0m: [35mList[0m[[35mVuelo[0m], [36maeropuertos[0m: [35mList[0m[[35mAeropuerto[0m]): ([35mString[0m, [35mString[0m) => [35mList[0m[[35mItinerario[0m] = {[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                                                                                                        ^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m           Found:    Unit[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m           Required: (String, String) => List[ItinerariosPar.Itinerario][0m
+[0m[[0m[31merror[0m] [0m[0m[31m67 |[0m    [0m
+[0m[[0m[31merror[0m] [0m[0m[31m68 |[0m  }[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E007] Type Mismatch Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\ItinerariosPar\package.scala:78:117 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m78 |[0m  [33mdef[0m [36mitinerariosAirePar[0m([36mvuelos[0m: [35mList[0m[[35mVuelo[0m], [36maeropuertos[0m: [35mList[0m[[35mAeropuerto[0m]): ([35mString[0m, [35mString[0m) => [35mList[0m[[35mItinerario[0m] = {[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                                                                                                     ^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m           Found:    Unit[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m           Required: (String, String) => List[ItinerariosPar.Itinerario][0m
+[0m[[0m[31merror[0m] [0m[0m[31m79 |[0m    [0m
+[0m[[0m[31merror[0m] [0m[0m[31m80 |[0m  }[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E007] Type Mismatch Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\ItinerariosPar\package.scala:90:113 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m90 |[0m  [33mdef[0m [36mitinerariosSalidaPar[0m([36mvuelos[0m: [35mList[0m[[35mVuelo[0m], [36maeropuertos[0m: [35mList[0m[[35mAeropuerto[0m]): ([35mString[0m, [35mString[0m) => [35mItinerario[0m = {[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                                                                                                 ^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                 Found:    Unit[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                 Required: (String, String) => ItinerariosPar.Itinerario[0m
+[0m[[0m[31merror[0m] [0m[0m[31m91 |[0m  }[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E007] Type Mismatch Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\main.scala:30:31 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m30 |[0m    [33mval[0m [36mitsCurso[0m = itinerarios(vuelosCurso,aeropuertosCurso)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                               ^^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m               Found:    (Datos.vuelosCurso : List[Datos.package.Vuelo])[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m               Required: List[Vuelo²][0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m               where:    Vuelo  is a class in [33mpackage object[0m [35mDatos[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                         Vuelo² is a class in [33mmethod[0m [35mmain[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E007] Type Mismatch Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\main.scala:30:43 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m30 |[0m    [33mval[0m [36mitsCurso[0m = itinerarios(vuelosCurso,aeropuertosCurso)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                           ^^^^^^^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m     Found:    (Datos.aeropuertosCurso : List[Datos.package.Aeropuerto])[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m     Required: List[Aeropuerto²][0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m     where:    Aeropuerto  is a class in [33mpackage object[0m [35mDatos[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m               Aeropuerto² is a class in [33mmethod[0m [35mmain[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[31merror[0m] [0m[0m6 errors found[0m

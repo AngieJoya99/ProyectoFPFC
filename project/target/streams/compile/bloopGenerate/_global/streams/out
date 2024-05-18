@@ -1,4 +1,4 @@
-[debug] [proyectofpfc-build] Classpath dependencies List()
-[debug] [proyectofpfc-build] Dependencies from configurations List()
-[debug] Bloop wrote the configuration of project 'proyectofpfc-build' to 'E:\Universidad\Ingeniería de Sistemas\3 - Tercer Semestre\Fund. Prog. Funcional y Concurrente\ProyectoFPFC\project\.bloop\proyectofpfc-build.json'
-[success] Generated .bloop\proyectofpfc-build.json
+[0m[[0m[0mdebug[0m] [0m[0m[proyectofpfc-build] Classpath dependencies List()[0m
+[0m[[0m[0mdebug[0m] [0m[0m[proyectofpfc-build] Dependencies from configurations List()[0m
+[0m[[0m[0mdebug[0m] [0m[0mBloop wrote the configuration of project 'proyectofpfc-build' to 'C:\Users\Jose Daniel\Desktop\ProyectoFPFC\project\.bloop\proyectofpfc-build.json'[0m
+[0m[[0m[32msuccess[0m] [0m[0mGenerated .bloop\proyectofpfc-build.json[0m

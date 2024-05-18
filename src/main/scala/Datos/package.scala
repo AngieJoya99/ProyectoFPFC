@@ -3814,7 +3814,7 @@ package object Datos {
 
   //longitud 500
 
- val vuelosD1= List(
+  val vuelosD1= List(
     Vuelo("HP", 548, "PHX", 18, 17, "DFW", 11, 45, 0),
     Vuelo("HP", 24, "PHX", 14, 30, "LAX", 14, 50, 0),
     Vuelo("HP", 14, "PHX", 6, 50, "LAX", 10, 6, 0),
