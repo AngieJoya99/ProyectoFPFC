@@ -17,46 +17,14 @@ package object Itinerarios{
   
   type Itinerario = List[Vuelo]
 
-  //-----------------------FUNCIONES AUXILIARES------------------------------------------------------
-  //
-  def aplanarHora(hora:Int , gmt:Int):Int = {
-      val horaAjustada = hora + (gmt/100)
-      horaAjustada
-    }
-
-  def horasTotalViaje(horaSalida:Int , horaLlegada:Int):Int = {
-    if (horaSalida < horaLlegada || horaSalida==horaLlegada) horaLlegada-horaSalida
-    else
-      val totalHoras = (horaLlegada + 24) - horaSalida
-      totalHoras
-    }
-
-  def totalHoraAire(itinerario: Itinerario,n: Int, aeropuertos:List[Aeropuerto]): Int = {
-    val primeraHoraSalida = itinerario.head.HS
-
-    val totalHoras = itinerario.map{vuelo =>
-    val origen = encontrarAeropuerto(vuelo.Org, aeropuertos)
-    val destino = encontrarAeropuerto(vuelo.Dst, aeropuertos)
-    val horaSalidaAplanada = aplanarHora(vuelo.HS, origen.GMT)
-    val horaLlegadaAplanada = aplanarHora(vuelo.HL, destino.GMT)
-    horasTotalViaje(horaSalidaAplanada, horaLlegadaAplanada)}.sum 
-    totalHoras
+  def encontrarAeropuerto(codA:String, arpt:List[Aeropuerto]): Aeropuerto = {
+    (for(a <- arpt if codA == a.Cod) yield a).head
   }
-    
-  //Funcion auxiliar para hallar el aeropuerto
-    def encontrarAeropuerto(codA:String, arpt:List[Aeropuerto]): Aeropuerto = {
-      val buscarAeropuerto = for(a <- arpt if codA == a.Cod) yield a 
-      val aeropuertoEncontrado = buscarAeropuerto.head
-      aeropuertoEncontrado
-    }
 
-    //Funcion Auxiliar que calcula la distancia usando la formula Euclidiana de la distancia entre 2 puntos
-    def calcularDist(x2:Int , x1:Int, y2:Int ,y1:Int):Double={
-      val distancia = math.sqrt(math.pow((x2 - x1),2) + math.pow((y2 - y1),2))
-      distancia
-    }
-  //-----------------------------------------------------------------------------------------------
-
+  //Funcion Auxiliar que calcula la distancia usando la formula Euclidiana de la distancia entre 2 puntos
+  def calcularDist(x2:Int , x1:Int, y2:Int ,y1:Int):Double={
+    math.sqrt(math.pow((x2 - x1),2) + math.pow((y2 - y1),2))
+  }  
 
   /** Dada una lista de todos los vuelos disponibles y una lista 
     * de todos los aeropuertos, crea una función que calcula todos
@@ -75,7 +43,6 @@ package object Itinerarios{
         generarItinerario(vuelo.Dst, cod2, nuevosVisitados, vuelos.filterNot(_ == vuelo)).map(vuelo :: _)
       case _ => List.empty
     }
-
     (cod1: String, cod2: String) => generarItinerario(cod1, cod2, Set.empty, vuelos)
   }
    
@@ -108,37 +75,7 @@ package object Itinerarios{
       }
     }
     buscarItinerarios
-  }
-
-  /*
-  def itinerariosTiempo2(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
-    val listaIt = itinerarios(vuelos,aeropuertos)
-    def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
-      val itEntre = listaIt(cod1,cod2)
-    
-      if (itEntre.size < 3) itEntre
-
-      else
-          val totalAireTierra:List[Itinerario] = itEntre.sortBy(iti => 
-            (iti.map(vuelo =>
-              val origen = encontrarAeropuerto(vuelo.Org,aeropuertos)
-              val destino = encontrarAeropuerto(vuelo.Dst,aeropuertos)
-              val horaSalidaAplanada = aplanarHora(vuelo.HS,origen.GMT) + vuelo.MS
-              val horaLlegadaAplanada = aplanarHora(vuelo.HL,destino.GMT) + vuelo.ML
-              horasTotalViaje(horaSalidaAplanada,horaLlegadaAplanada)
-              ).sum for(i <- (0 until itEntre.size) )))
-
-        /*val itinerariosMenorEscOrd:List[Itinerario] = itinerariosTotales.sortBy(
-        iti => (iti.map(_.Esc).sum + (iti.size - 1)))/*Ordena la lista de itinerarios de acuerdo al total de escalas
-        Que realiza cada itinerario*/
-
-        val itinerariosMenorEsc:List[Itinerario] = itinerariosMenorEscOrd.take(3)
-        itinerariosMenorEsc*/
-      }
-    }
-    buscarItinerarios
-  }*/
-  
+  }   
 
   /** Dada una lista de todos los vuelos disponibles y una lista 
     * de todos los aeropuertos, crea una función que calcula los 3 (si los hay) 
@@ -175,7 +112,6 @@ package object Itinerarios{
     * @return Función que recibe dos códigos de aeropuerto c1 y c2, y retorna
     * una lista de itinerarios
     */
-
   def itinerariosAire(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
     val itinerariosEntre = itinerarios(vuelos,aeropuertos)
 
@@ -204,25 +140,18 @@ package object Itinerarios{
     * un itineario que optimiza la hora de salida para llegar a tiempo a la cita
     * @param vuelos Lista de todos los vuelos disponibles
     * @param aeropuertos Lista de todos los aeropuertos
-    * @return Función que recibe dos códigos de aeropuerto c1 y c2 y una hora de
-    * cita en c2 h:m, y retorna un itinerario
-    */
-    
+    * @return Función que recibe dos códigos de aeropuerto cod1 y cod2 y una hora de
+    * cita HC:MC, y retorna un itinerario
+    */    
   def itinerariosSalida(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String,Int,Int) => Itinerario = {
-      val listaIt = itinerarios(vuelos,aeropuertos)
-      def calcularItinerario(cod1:String, cod2:String, HC:Int ,MC:Int):Itinerario={
-        val listaEntre = listaIt(cod1, cod2)
-        val listaCita = listaEntre.filter(itinerario => (((itinerario.last.HL*60)+itinerario.last.ML)<=((HC*60)+MC)))
-        /*if (listaCita.isEmpty){
-          val vuelosVacios: List[Vuelo] = List.empty[Vuelo]
-          vuelosVacios*/      
-          val mejor = listaCita.sortBy(itinerario => (itinerario.head.HS+itinerario.head.MS))
-          if (listaCita.isEmpty) List.empty[Vuelo]
-          //mejor.last
-          else mejor.last
-        }            //val listaCita = listaEntre.filter(itinerario => (itinerario.last.HL<=HC)&&(itinerario.last.ML<=MC))
-      }
-      calcularItinerario
-  }   
+    val listaIt = itinerarios(vuelos,aeropuertos)
+    def calcularItinerario(cod1:String, cod2:String, HC:Int ,MC:Int):Itinerario={
+      val listaEntre = listaIt(cod1, cod2)
+      val listaCita = listaEntre.filter(itinerario => (((itinerario.last.HL*60)+itinerario.last.ML)<=((HC*60)+MC)))
+      
+      if (listaCita.isEmpty)(List.empty[Vuelo])
+      else ((listaCita.sortBy(itinerario => (itinerario.head.HS+itinerario.head.MS))).last)
+    }
+    calcularItinerario
+  }
 }
-

@@ -2,7 +2,7 @@
 Johan David Pitto - 1932739
 Miguel Ángel Salcedo - 2242786
 José Daniel Trujillo - 2225611*/
-/*
+
 import common._
 import scala.collection.parallel.CollectionConverters._
 
@@ -29,18 +29,15 @@ package object ItinerariosPar{
     * todos los itinerarios entre los dos aeropuertos
     */
   def itinerariosPar(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
-    def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
-      def generarItinerario(cod1: String, cod2: String, visitados: Set[String], vuelosRestantes: List[Vuelo]): List[Itinerario] = vuelosRestantes.flatMap {
-        case vuelo if vuelo.Org == cod1 && vuelo.Dst == cod2 && !visitados.contains(vuelo.Dst) =>
-          List(List(vuelo))
-        case vuelo if vuelo.Org == cod1 && !visitados.contains(vuelo.Dst) =>
-          val nuevosVisitados = visitados + vuelo.Org
-          generarItinerario(vuelo.Dst, cod2, nuevosVisitados, vuelos.filterNot(_ == vuelo)).map(vuelo :: _)
-        case _ => None
-      }
-      generarItinerario(cod1, cod2, Set.empty, vuelos)
+    def generarItinerario(cod1: String, cod2: String, visitados: Set[String], vuelosRestantes: List[Vuelo]): List[Itinerario] = vuelosRestantes.flatMap {
+      case vuelo if vuelo.Org == cod1 && vuelo.Dst == cod2 && !visitados.contains(vuelo.Dst) =>
+        List(List(vuelo))
+      case vuelo if vuelo.Org == cod1 && !visitados.contains(vuelo.Dst) =>
+        val nuevosVisitados = visitados + vuelo.Org
+        generarItinerario(vuelo.Dst, cod2, nuevosVisitados, vuelos.filterNot(_ == vuelo)).map(vuelo :: _)
+      case _ => List.empty
     }
-    buscarItinerarios
+    (cod1: String, cod2: String) => generarItinerario(cod1, cod2, Set.empty, vuelos)
   }
 
   /** Dada una lista de todos los vuelos disponibles y una lista 
@@ -52,7 +49,10 @@ package object ItinerariosPar{
     * una lista de itinerarios
     */
   def itinerariosTiempoPar(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
-    
+    def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
+      List.empty[Itinerario]
+    }
+    buscarItinerarios
   }
 
   /** Dada una lista de todos los vuelos disponibles y una lista 
@@ -64,7 +64,10 @@ package object ItinerariosPar{
     * una lista de itinerarios
     */
   def itinerariosEscalasPar(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
-    
+    def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
+      List.empty[Itinerario]
+    }
+    buscarItinerarios    
   }
 
   /** Dada una lista de todos los vuelos disponibles y una lista 
@@ -76,7 +79,10 @@ package object ItinerariosPar{
     * una lista de itinerarios
     */
   def itinerariosAirePar(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
-    
+    def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
+      List.empty[Itinerario]
+    }
+    buscarItinerarios    
   }
 
   /** Dada una lista de todos los vuelos disponibles y una lista 
@@ -87,8 +93,15 @@ package object ItinerariosPar{
     * @return Función que recibe dos códigos de aeropuerto c1 y c2 y una hora de
     * cita en c2 h:m, y retorna un itinerario
     */
-  def itinerariosSalidaPar(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => Itinerario = {
-
+  def itinerariosSalidaPar(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String,Int,Int) => Itinerario = {
+    val listaIt = itinerariosPar(vuelos,aeropuertos)
+    def calcularItinerario(cod1:String, cod2:String, HC:Int ,MC:Int):Itinerario={
+      val listaEntre = listaIt(cod1, cod2)
+      val listaCita = listaEntre.filter(itinerario => (((itinerario.last.HL*60)+itinerario.last.ML)<=((HC*60)+MC)))
+      if (listaCita.isEmpty)(List.empty[Vuelo])
+      else ((listaCita.sortBy(itinerario => (itinerario.head.HS+itinerario.head.MS))).last)
+    }
+    calcularItinerario
   }
     
-}*/
+}
