@@ -57,25 +57,48 @@ package object Itinerarios{
   def itinerariosTiempo(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
     val listaIt = itinerarios(vuelos,aeropuertos)
     def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
-      def tiempoItinerario (it:Itinerario, arpt:List[Aeropuerto]): Int = {
-        def horaGMT (v:Vuelo): (Int,Int) ={
-          val GMTSalida = (for(a <- arpt if v.Org == a.Cod) yield a).head.GMT
-          val GMTLlegada = (for(a <- arpt if v.Dst == a.Cod) yield a).head.GMT
-          val hSalida  = ((v.HS - GMTSalida)*60) + v.MS
-          val hLlegada = ((v.HL - GMTLlegada)*60) + v.ML
-          (hSalida,hLlegada)
-        }
-
-        if (it.length<=1){
-          val hLlegada = horaGMT(it.head)._2
-          val hSalida = horaGMT(it.head)._1
-          if (hLlegada >= hSalida) (hLlegada+(60*24)-hSalida) else (hLlegada-hSalida)
-        } else{
-          //Paso recursivo, no estou segura de como se hace
-          0
-        }        
+      def horaGMT (v:Vuelo, arpt:List[Aeropuerto]): (Int,Int) ={
+        val GMTSalida = (for(a <- arpt if v.Org == a.Cod) yield a).head.GMT
+        val GMTLlegada = (for(a <- arpt if v.Dst == a.Cod) yield a).head.GMT
+        val hSalida  = ((v.HS - GMTSalida)*60) + v.MS
+        val hLlegada = ((v.HL - GMTLlegada)*60) + v.ML
+        if (hLlegada <= hSalida) (hSalida,hLlegada+(60*24)) else (hSalida,hLlegada)
       }
 
+      def tiempoVuelo(it:Itinerario, arpt:List[Aeropuerto]): Int = {
+        (for (v <- it) yield((horaGMT(v,arpt)._2 - horaGMT(v,arpt)._1))).sum
+      }
+
+      def tiempoEspera(it:Itinerario, arpt:List[Aeropuerto]): Int = {
+        val size = it.size
+        if(size <= 1)(0) else{
+          (for (i <- 1 until size) yield((horaGMT(it(i),arpt)._1 - horaGMT(it(i-1),arpt)._2))).sum
+        }
+      }
+
+      val listaEntre = listaIt(cod1, cod2)
+      if (listaEntre.length<=3)(listaEntre)
+      else{
+        listaEntre.sortBy(it => (tiempoVuelo(it,aeropuertos)+tiempoEspera(it,aeropuertos))).take(3)
+      }
+    }
+    buscarItinerarios
+  }
+
+  def itinerariosTiempo2(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
+    val listaIt = itinerarios(vuelos,aeropuertos)
+    def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
+      def tiempoItinerario (it:Itinerario, arpt:List[Aeropuerto]): Int = {
+        val vInicio = it.head
+        val vFin = it.last
+        val GMTSalida = (for(a <- arpt if vInicio.Org == a.Cod) yield a).head.GMT
+        val GMTLlegada = (for(a <- arpt if vFin.Dst == a.Cod) yield a).head.GMT
+        val hSalida  = ((vInicio.HS - GMTSalida)*60) + vInicio.MS
+        val hLlegada = ((vFin.HL - GMTLlegada)*60) + vFin.ML
+        
+        if (hLlegada <= hSalida) (hLlegada+(60*24)-hSalida)
+        else (hLlegada-hSalida)
+      }
       val listaEntre = listaIt(cod1, cod2)
       if (listaEntre.length<=3)(listaEntre)
       else{
@@ -83,7 +106,7 @@ package object Itinerarios{
       }
     }
     buscarItinerarios
-  }   
+  }
 
   /** Dada una lista de todos los vuelos disponibles y una lista 
     * de todos los aeropuertos, crea una función que calcula los 3 (si los hay) 
