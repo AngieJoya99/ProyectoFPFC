@@ -58,16 +58,24 @@ package object Itinerarios{
     val listaIt = itinerarios(vuelos,aeropuertos)
     def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
       def tiempoItinerario (it:Itinerario, arpt:List[Aeropuerto]): Int = {
-        val vInicio = it.head
-        val vFin = it.last
-        val GMTSalida = (for(a <- arpt if vInicio.Org == a.Cod) yield a).head.GMT
-        val GMTLlegada = (for(a <- arpt if vFin.Dst == a.Cod) yield a).head.GMT
-        val hSalida  = ((vInicio.HS - GMTSalida)*60) + vInicio.MS
-        val hLlegada = ((vFin.HL - GMTLlegada)*60) + vFin.ML
-        
-        if (hLlegada >= hSalida) (hLlegada+(60*24)-hSalida)
-        else (hLlegada-hSalida)
+        def horaGMT (v:Vuelo): (Int,Int) ={
+          val GMTSalida = (for(a <- arpt if v.Org == a.Cod) yield a).head.GMT
+          val GMTLlegada = (for(a <- arpt if v.Dst == a.Cod) yield a).head.GMT
+          val hSalida  = ((v.HS - GMTSalida)*60) + v.MS
+          val hLlegada = ((v.HL - GMTLlegada)*60) + v.ML
+          (hSalida,hLlegada)
+        }
+
+        if (it.length<=1){
+          val hLlegada = horaGMT(it.head)._2
+          val hSalida = horaGMT(it.head)._1
+          if (hLlegada >= hSalida) (hLlegada+(60*24)-hSalida) else (hLlegada-hSalida)
+        } else{
+          //Paso recursivo, no estou segura de como se hace
+          0
+        }        
       }
+
       val listaEntre = listaIt(cod1, cod2)
       if (listaEntre.length<=3)(listaEntre)
       else{
