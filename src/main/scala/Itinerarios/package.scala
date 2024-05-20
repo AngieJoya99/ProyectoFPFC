@@ -17,15 +17,6 @@ package object Itinerarios{
   
   type Itinerario = List[Vuelo]
 
-  def encontrarAeropuerto(codA:String, arpt:List[Aeropuerto]): Aeropuerto = {
-    (for(a <- arpt if codA == a.Cod) yield a).head
-  }
-
-  //Funcion Auxiliar que calcula la distancia usando la formula Euclidiana de la distancia entre 2 puntos
-  def calcularDist(x2:Int , x1:Int, y2:Int ,y1:Int):Double={
-    math.sqrt(math.pow((x2 - x1),2) + math.pow((y2 - y1),2))
-  }  
-
   /** Dada una lista de todos los vuelos disponibles y una lista 
     * de todos los aeropuertos, crea una función que calcula todos
     * los itinearios entre 2 aerpuertos que recibe como parámetro
@@ -101,13 +92,14 @@ package object Itinerarios{
       
       if (itinerariosTotales.size <= 3) itinerariosTotales   
 
-      else 
+      else {
         val itinerariosMenorEscOrd:List[Itinerario] = itinerariosTotales.sortBy(
         iti => (iti.map(_.Esc).sum + (iti.size - 1)))/*Ordena la lista de itinerarios de acuerdo al total de escalas
         Que realiza cada itinerario*/
 
         val itinerariosMenorEsc:List[Itinerario] = itinerariosMenorEscOrd.take(3)
         itinerariosMenorEsc
+      }        
     }   
     encontrarMenorEsc
   }
@@ -125,11 +117,19 @@ package object Itinerarios{
 
     //Fucion que Ordena los itinerarios con menor distancia de vuelo
     def itinerariosMenorDistancia(cod1 : String , cod2 : String): List[Itinerario] = {
+      def encontrarAeropuerto(codA:String, arpt:List[Aeropuerto]): Aeropuerto = {
+        (for(a <- arpt if codA == a.Cod) yield a).head
+      }
+
+      //Funcion Auxiliar que calcula la distancia usando la formula Euclidiana de la distancia entre 2 puntos
+      def calcularDist(x2:Int , x1:Int, y2:Int ,y1:Int):Double={
+        math.sqrt(math.pow((x2 - x1),2) + math.pow((y2 - y1),2))
+      }
+
       val itinerariosTotales = itinerariosEntre(cod1,cod2)//Halla los itinerarios entre el aeropuerto cod1 y cod2
 
-      if (itinerariosTotales.size < 3) itinerariosTotales
-
-      else
+      if (itinerariosTotales.size <= 3) itinerariosTotales
+      else{
         //Retorna la lista de itinerarios ordenada por la distancia de vuelo
         val itineriosMenorDisOrd:List[Itinerario] = itinerariosTotales.sortBy(
           iti => iti.map(vuelo => 
@@ -139,9 +139,11 @@ package object Itinerarios{
         )
         val itinerariosMenorDis:List[Itinerario] = itineriosMenorDisOrd.take(3)
         itinerariosMenorDis
+      }
     }
     itinerariosMenorDistancia
-  }
+  }        
+  
 
   /** Dada una lista de todos los vuelos disponibles y una lista 
     * de todos los aeropuertos, crea una función que calcula
@@ -155,7 +157,9 @@ package object Itinerarios{
     val listaIt = itinerarios(vuelos,aeropuertos)
     def calcularItinerario(cod1:String, cod2:String, HC:Int ,MC:Int):Itinerario={
       val listaEntre = listaIt(cod1, cod2)
-      val listaCita = listaEntre.filter(itinerario => (((itinerario.last.HL*60)+itinerario.last.ML)<=((HC*60)+MC)))
+      val listaCita = listaEntre.filter(itinerario => (
+        ((itinerario.last.HL*60)+itinerario.last.ML)<=((HC*60)+MC))
+      )
       
       if (listaCita.isEmpty)(List.empty[Vuelo])
       else ((listaCita.sortBy(itinerario => (itinerario.head.HS+itinerario.head.MS))).last)
