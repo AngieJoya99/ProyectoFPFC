@@ -166,4 +166,51 @@ package object Itinerarios{
     }
     calcularItinerario
   }
+
+  def itinerariosTiempo2(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
+    val listaIt = itinerarios(vuelos,aeropuertos)
+    def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
+      def tiempoItinerario (it:Itinerario, arpt:List[Aeropuerto]): Int = {
+        val vInicio = it.head
+        val vFin = it.last
+        val GMTSalida = (for(a <- arpt if vInicio.Org == a.Cod) yield a).head.GMT
+        val GMTLlegada = (for(a <- arpt if vFin.Dst == a.Cod) yield a).head.GMT
+        val hSalida  = (vInicio.HS - (GMTSalida/100)*60) + vInicio.MS
+        val hLlegada = (vFin.HS - (GMTLlegada/100)*60) + vFin.MS
+        
+        if (hLlegada <= hSalida) (hLlegada+(60*24)-hSalida)
+        else (hLlegada-hSalida)
+      }
+      val listaEntre = listaIt(cod1, cod2)
+      if (listaEntre.length<=3)(listaEntre)
+      else{
+        listaEntre.sortBy(it => (tiempoItinerario(it,aeropuertos))).take(3)
+      }
+    }
+    buscarItinerarios
+  }
+
+  def itinerariosAire2(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
+    val listaIt = itinerarios(vuelos,aeropuertos)
+    def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
+      def horaGMT (v:Vuelo, arpt:List[Aeropuerto]): (Int,Int) ={
+        val GMTSalida = (for(a <- arpt if v.Org == a.Cod) yield a).head.GMT
+        val GMTLlegada = (for(a <- arpt if v.Dst == a.Cod) yield a).head.GMT
+        val hSalida  = ((v.HS - (GMTSalida/100))*60) + v.MS
+        val hLlegada = ((v.HL - (GMTLlegada/100))*60) + v.ML
+        if (hLlegada <= hSalida) (hSalida,hLlegada+(60*24)) else (hSalida,hLlegada)
+      }
+
+      def tiempoVuelo(it:Itinerario, arpt:List[Aeropuerto]): Int = {
+        (for (v <- it) yield((horaGMT(v,arpt)._2 - horaGMT(v,arpt)._1))).sum        
+      }
+
+      val listaEntre = listaIt(cod1, cod2)
+      if (listaEntre.length<=3)(listaEntre)
+      else{
+        listaEntre.sortBy(it => tiempoVuelo(it,aeropuertos)).take(3)
+      }
+    }
+    buscarItinerarios
+  }
 }
