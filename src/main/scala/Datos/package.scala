@@ -1,12 +1,12 @@
 import scala.collection.parallel.CollectionConverters._
 import scala.collection.parallel.ParSeq
 package object Datos {
-  //case class Aeropuerto(Cod: String, X: Int, Y: Int, GMT: Int)
+  case class Aeropuerto(Cod: String, X: Int, Y: Int, GMT: Int)
 
-  //case class Vuelo(Aln: String, Num: Int, Org: String, HS: Int, MS: Int, Dst: String, HL: Int, ML: Int, Esc: Int)
+  case class Vuelo(Aln: String, Num: Int, Org: String, HS: Int, MS: Int, Dst: String, HL: Int, ML: Int, Esc: Int)
 
-  //type Itinerario = List[Vuelo]
-  //type ItinerarioPar = ParSeq[Vuelo]
+  type Itinerario = List[Vuelo]
+  type ItinerarioPar = ParSeq[Vuelo]
 
   val aeropuertosCurso = List(
 
@@ -2982,7 +2982,7 @@ package object Datos {
   //________________________________________________________
 
   //longitud 15
-
+/*
   val vuelosA1= List(
     Vuelo("4X", 373, "HOU", 13, 15, "MSY", 15, 10, 1),
     Vuelo("4X", 201, "MSY", 8, 35, "HOU", 12, 20, 2),
@@ -5321,5 +5321,5 @@ package object Datos {
     Vuelo("WN", 603, "LAX", 7, 0, "BNA", 13, 55, 1),
     Vuelo("WN", 663, "STL", 21, 20, "HOU", 13, 15, 0),
     Vuelo("WN", 952, "LAX", 11, 15, "PHX", 13, 25, 0)
-  )*/
+  )*/*/
 }

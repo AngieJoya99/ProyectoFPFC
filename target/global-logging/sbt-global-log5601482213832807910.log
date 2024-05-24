@@ -1,0 +1,608 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(console, Some(59b010e7-3792-4cca-84d0-cf0afa7d9c82), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / console[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 5 Scala sources to C:\Users\Jose Daniel\Desktop\ProyectoFPFC\target\scala-3.3.3\classes ...[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:13:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m13 |[0m    Aeropuerto([31m"CLO"[0m, [31m100[0m, [31m200[0m, -[31m500[0m), [34m// Cali[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:14:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m14 |[0m    Aeropuerto([31m"BOG"[0m, [31m300[0m, [31m500[0m, -[31m500[0m), [34m// Bogotá[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:15:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m15 |[0m    Aeropuerto([31m"MDE"[0m, [31m200[0m, [31m600[0m, -[31m500[0m), [34m// Medellín[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:16:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m16 |[0m    Aeropuerto([31m"BAQ"[0m, [31m350[0m, [31m850[0m, -[31m500[0m), [34m// Barranquilla[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:17:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m17 |[0m    Aeropuerto([31m"SMR"[0m, [31m400[0m, [31m950[0m, -[31m500[0m), [34m// Santa Marta[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:18:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m18 |[0m    Aeropuerto([31m"CTG"[0m, [31m300[0m, [31m800[0m, -[31m500[0m), [34m// Cartagena[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:19:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m19 |[0m    Aeropuerto([31m"PTY"[0m, [31m400[0m, [31m1000[0m, -[31m500[0m), [34m// Ciudad de Panamá[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:20:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m20 |[0m    Aeropuerto([31m"JFK"[0m, [31m2000[0m, [31m2000[0m, -[31m400[0m), [34m// Nueva York[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:21:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m21 |[0m    Aeropuerto([31m"MIA"[0m, [31m1000[0m, [31m2000[0m, -[31m500[0m), [34m// Miami[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:22:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m22 |[0m    Aeropuerto([31m"MEX"[0m, [31m1000[0m, [31m1000[0m, -[31m600[0m), [34m// Ciudad de México[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:23:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m23 |[0m    Aeropuerto([31m"MAD"[0m, [31m5000[0m, [31m5000[0m, [31m100[0m), [34m// Madrid[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:24:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m24 |[0m    Aeropuerto([31m"SVCS"[0m, [31m400[0m, [31m1000[0m, -[31m600[0m), [34m// Caracas[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:25:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m25 |[0m    Aeropuerto([31m"MID"[0m, [31m500[0m, [31m100[0m, -[31m600[0m), [34m// Merida[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:26:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m26 |[0m    Aeropuerto([31m"AUA"[0m, [31m500[0m, [31m2000[0m, -[31m400[0m), [34m// Aruba[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:27:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m27 |[0m    Aeropuerto([31m"IST"[0m, [31m9000[0m, [31m9000[0m, [31m300[0m), [34m// Estambul[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:28:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m28 |[0m    Aeropuerto([31m"HND"[0m, [31m10000[0m, [31m12000[0m, [31m900[0m), [34m// Tokio[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:29:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m29 |[0m    Aeropuerto([31m"DXB"[0m, [31m9500[0m, [31m11500[0m, [31m400[0m), [34m// Dubai[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:30:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m30 |[0m    Aeropuerto([31m"SVO"[0m, [31m12500[0m, [31m12500[0m, [31m300[0m) [34m// Moscú[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:33:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m33 |[0m    Vuelo([31m"AIRVZLA"[0m, [31m601[0m, [31m"MID"[0m, [31m5[0m, [31m0[0m, [31m"SVCS"[0m, [31m6[0m, [31m0[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:34:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m34 |[0m    Vuelo([31m"AIRVZLA"[0m, [31m602[0m, [31m"SVCS"[0m, [31m6[0m, [31m30[0m, [31m"MID"[0m, [31m7[0m, [31m30[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:35:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m35 |[0m    Vuelo([31m"AVA"[0m, [31m9432[0m, [31m"CLO"[0m, [31m7[0m, [31m0[0m, [31m"SVO"[0m, [31m2[0m, [31m20[0m, [31m4[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:36:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m36 |[0m    Vuelo([31m"AVA"[0m, [31m9432[0m, [31m"CLO"[0m, [31m7[0m, [31m0[0m, [31m"BOG"[0m, [31m8[0m, [31m0[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:37:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m37 |[0m    Vuelo([31m"IBERIA"[0m, [31m505[0m, [31m"BOG"[0m, [31m18[0m, [31m0[0m, [31m"MAD"[0m, [31m12[0m, [31m0[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:38:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m38 |[0m    Vuelo([31m"IBERIA"[0m, [31m506[0m, [31m"MAD"[0m, [31m14[0m, [31m0[0m, [31m"SVO"[0m, [31m23[0m, [31m20[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:39:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m39 |[0m    Vuelo([31m"IBERIA"[0m, [31m507[0m, [31m"MAD"[0m, [31m16[0m, [31m0[0m, [31m"SVO"[0m, [31m1[0m, [31m20[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:40:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m40 |[0m    Vuelo([31m"LATAM"[0m, [31m787[0m, [31m"BOG"[0m, [31m17[0m, [31m0[0m, [31m"MEX"[0m, [31m19[0m, [31m0[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:41:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m41 |[0m    Vuelo([31m"VIVA"[0m, [31m756[0m, [31m"BOG"[0m, [31m9[0m, [31m0[0m, [31m"MDE"[0m, [31m10[0m, [31m0[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:42:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m42 |[0m    Vuelo([31m"VIVA"[0m, [31m769[0m, [31m"MDE"[0m, [31m11[0m, [31m0[0m, [31m"BAQ"[0m, [31m12[0m, [31m0[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:43:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m43 |[0m    Vuelo([31m"AVA"[0m, [31m5643[0m, [31m"BAQ"[0m, [31m14[0m, [31m0[0m, [31m"MEX"[0m, [31m16[0m, [31m0[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:44:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m44 |[0m    Vuelo([31m"COPA"[0m, [31m1234[0m, [31m"CTG"[0m, [31m10[0m, [31m0[0m, [31m"PTY"[0m, [31m11[0m, [31m30[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:45:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m45 |[0m    Vuelo([31m"AVA"[0m, [31m4321[0m, [31m"CTG"[0m, [31m9[0m, [31m30[0m, [31m"SMR"[0m, [31m10[0m, [31m0[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:46:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m46 |[0m    Vuelo([31m"COPA"[0m, [31m7631[0m, [31m"SMR"[0m, [31m10[0m, [31m50[0m, [31m"PTY"[0m, [31m11[0m, [31m50[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:47:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m47 |[0m    Vuelo([31m"TURKISH"[0m, [31m7799[0m, [31m"CLO"[0m, [31m7[0m, [31m0[0m, [31m"IST"[0m, [31m14[0m, [31m0[0m, [31m3[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:48:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m48 |[0m    Vuelo([31m"QATAR"[0m, [31m5566[0m, [31m"IST"[0m, [31m23[0m, [31m0[0m, [31m"SVO"[0m, [31m2[0m, [31m0[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:57:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m57 |[0m    Aeropuerto([31m"ABQ"[0m, [31m195[0m, [31m275[0m, -[31m800[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:58:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m58 |[0m    Aeropuerto([31m"ATL"[0m, [31m470[0m, [31m280[0m, -[31m600[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:59:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m59 |[0m    Aeropuerto([31m"BNA"[0m, [31m430[0m, [31m240[0m, -[31m700[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:60:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m60 |[0m    Aeropuerto([31m"BOS"[0m, [31m590[0m, [31m100[0m, -[31m600[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:61:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m61 |[0m    Aeropuerto([31m"DCA"[0m, [31m540[0m, [31m180[0m, -[31m600[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:62:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m62 |[0m    Aeropuerto([31m"DEN"[0m, [31m215[0m, [31m205[0m, -[31m800[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:63:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m63 |[0m    Aeropuerto([31m"DFW"[0m, [31m310[0m, [31m305[0m, -[31m700[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:64:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m64 |[0m    Aeropuerto([31m"DTW"[0m, [31m445[0m, [31m140[0m, -[31m600[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:65:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m65 |[0m    Aeropuerto([31m"HOU"[0m, [31m330[0m, [31m355[0m, -[31m700[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:66:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m66 |[0m    Aeropuerto([31m"JFK"[0m, [31m565[0m, [31m130[0m, -[31m600[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:67:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m67 |[0m    Aeropuerto([31m"LAX"[0m, [31m55[0m, [31m270[0m, -[31m900[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:68:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m68 |[0m    Aeropuerto([31m"MIA"[0m, [31m535[0m, [31m390[0m, -[31m600[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:69:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m69 |[0m    Aeropuerto([31m"MSP"[0m, [31m340[0m, [31m115[0m, -[31m700[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:70:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m70 |[0m    Aeropuerto([31m"MSY"[0m, [31m405[0m, [31m345[0m, -[31m700[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:71:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m71 |[0m    Aeropuerto([31m"ORD"[0m, [31m410[0m, [31m155[0m, -[31m700[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:72:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m72 |[0m    Aeropuerto([31m"PHL"[0m, [31m550[0m, [31m155[0m, -[31m600[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:73:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m73 |[0m    Aeropuerto([31m"PHX"[0m, [31m120[0m, [31m290[0m, -[31m800[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:74:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m74 |[0m    Aeropuerto([31m"PVD"[0m, [31m595[0m, [31m122[0m, -[31m600[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:75:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m75 |[0m    Aeropuerto([31m"RDU"[0m, [31m530[0m, [31m230[0m, -[31m600[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:76:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m76 |[0m    Aeropuerto([31m"SEA"[0m, [31m55[0m, [31m45[0m, -[31m900[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:77:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m77 |[0m    Aeropuerto([31m"SFO"[0m, [31m10[0m, [31m190[0m, -[31m900[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:78:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m78 |[0m    Aeropuerto([31m"STL"[0m, [31m380[0m, [31m210[0m, -[31m700[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:79:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m79 |[0m    Aeropuerto([31m"TPA"[0m, [31m500[0m, [31m360[0m, -[31m600[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m    ^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m    Not found: Aeropuerto[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:2987:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m2987 |[0m    Vuelo([31m"4X"[0m, [31m373[0m, [31m"HOU"[0m, [31m13[0m, [31m15[0m, [31m"MSY"[0m, [31m15[0m, [31m10[0m, [31m1[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:2988:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m2988 |[0m    Vuelo([31m"4X"[0m, [31m201[0m, [31m"MSY"[0m, [31m8[0m, [31m35[0m, [31m"HOU"[0m, [31m12[0m, [31m20[0m, [31m2[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:2989:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m2989 |[0m    Vuelo([31m"4X"[0m, [31m372[0m, [31m"MSY"[0m, [31m11[0m, [31m0[0m, [31m"HOU"[0m, [31m12[0m, [31m55[0m, [31m1[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:2990:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m2990 |[0m    Vuelo([31m"4X"[0m, [31m213[0m, [31m"MSY"[0m, [31m14[0m, [31m0[0m, [31m"HOU"[0m, [31m17[0m, [31m40[0m, [31m3[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:2991:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m2991 |[0m    Vuelo([31m"4X"[0m, [31m374[0m, [31m"MSY"[0m, [31m16[0m, [31m0[0m, [31m"HOU"[0m, [31m17[0m, [31m55[0m, [31m1[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:2992:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m2992 |[0m    Vuelo([31m"4X"[0m, [31m216[0m, [31m"HOU"[0m, [31m14[0m, [31m30[0m, [31m"MSY"[0m, [31m18[0m, [31m10[0m, [31m3[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:2993:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m2993 |[0m    Vuelo([31m"4X"[0m, [31m370[0m, [31m"MSY"[0m, [31m6[0m, [31m15[0m, [31m"HOU"[0m, [31m11[0m, [31m0[0m, [31m1[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:2994:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m2994 |[0m    Vuelo([31m"4X"[0m, [31m375[0m, [31m"HOU"[0m, [31m18[0m, [31m20[0m, [31m"MSY"[0m, [31m10[0m, [31m15[0m, [31m1[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:2995:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m2995 |[0m    Vuelo([31m"4X"[0m, [31m214[0m, [31m"HOU"[0m, [31m9[0m, [31m0[0m, [31m"MSY"[0m, [31m12[0m, [31m40[0m, [31m3[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:2996:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m2996 |[0m    Vuelo([31m"4X"[0m, [31m371[0m, [31m"HOU"[0m, [31m8[0m, [31m35[0m, [31m"MSY"[0m, [31m10[0m, [31m30[0m, [31m1[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:2997:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m2997 |[0m    Vuelo([31m"AA"[0m, [31m324[0m, [31m"STL"[0m, [31m8[0m, [31m30[0m, [31m"ORD"[0m, [31m14[0m, [31m5[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:2998:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m2998 |[0m    Vuelo([31m"AA"[0m, [31m828[0m, [31m"MSY"[0m, [31m17[0m, [31m10[0m, [31m"BNA"[0m, [31m18[0m, [31m37[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:2999:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m2999 |[0m    Vuelo([31m"AA"[0m, [31m212[0m, [31m"DFW"[0m, [31m17[0m, [31m21[0m, [31m"ORD"[0m, [31m19[0m, [31m41[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3000:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3000 |[0m    Vuelo([31m"AA"[0m, [31m673[0m, [31m"ORD"[0m, [31m21[0m, [31m30[0m, [31m"SEA"[0m, [31m12[0m, [31m7[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3001:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3001 |[0m    Vuelo([31m"AA"[0m, [31m25[0m, [31m"DFW"[0m, [31m18[0m, [31m37[0m, [31m"PHX"[0m, [31m10[0m, [31m1[0m, [31m0[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3005:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3005 |[0m    Vuelo([31m"AA"[0m, [31m35[0m, [31m"RDU"[0m, [31m14[0m, [31m10[0m, [31m"MIA"[0m, [31m16[0m, [31m21[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3006:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3006 |[0m    Vuelo([31m"AA"[0m, [31m179[0m, [31m"ORD"[0m, [31m18[0m, [31m30[0m, [31m"PHX"[0m, [31m11[0m, [31m12[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3007:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3007 |[0m    Vuelo([31m"AA"[0m, [31m580[0m, [31m"SFO"[0m, [31m12[0m, [31m25[0m, [31m"ORD"[0m, [31m11[0m, [31m5[0m, [31m1[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3008:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3008 |[0m    Vuelo([31m"AA"[0m, [31m70[0m, [31m"SFO"[0m, [31m8[0m, [31m8[0m, [31m"DFW"[0m, [31m13[0m, [31m31[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3009:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3009 |[0m    Vuelo([31m"AA"[0m, [31m835[0m, [31m"DTW"[0m, [31m17[0m, [31m0[0m, [31m"ORD"[0m, [31m17[0m, [31m13[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3010:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3010 |[0m    Vuelo([31m"AA"[0m, [31m890[0m, [31m"PHX"[0m, [31m1[0m, [31m40[0m, [31m"ORD"[0m, [31m15[0m, [31m5[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3011:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3011 |[0m    Vuelo([31m"AA"[0m, [31m784[0m, [31m"DFW"[0m, [31m10[0m, [31m54[0m, [31m"ORD"[0m, [31m12[0m, [31m56[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3012:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3012 |[0m    Vuelo([31m"AA"[0m, [31m796[0m, [31m"DEN"[0m, [31m15[0m, [31m7[0m, [31m"BNA"[0m, [31m18[0m, [31m47[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3013:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3013 |[0m    Vuelo([31m"AA"[0m, [31m89[0m, [31m"ORD"[0m, [31m18[0m, [31m30[0m, [31m"LAX"[0m, [31m10[0m, [31m35[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3014:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3014 |[0m    Vuelo([31m"AA"[0m, [31m920[0m, [31m"MIA"[0m, [31m8[0m, [31m44[0m, [31m"DCA"[0m, [31m11[0m, [31m6[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3015:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3015 |[0m    Vuelo([31m"AA"[0m, [31m728[0m, [31m"DFW"[0m, [31m6[0m, [31m35[0m, [31m"BOS"[0m, [31m10[0m, [31m58[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3016:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3016 |[0m    Vuelo([31m"AA"[0m, [31m837[0m, [31m"ATL"[0m, [31m7[0m, [31m25[0m, [31m"DFW"[0m, [31m13[0m, [31m5[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3017:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3017 |[0m    Vuelo([31m"AA"[0m, [31m203[0m, [31m"DFW"[0m, [31m8[0m, [31m10[0m, [31m"SFO"[0m, [31m14[0m, [31m7[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3018:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3018 |[0m    Vuelo([31m"AA"[0m, [31m334[0m, [31m"RDU"[0m, [31m9[0m, [31m0[0m, [31m"PVD"[0m, [31m10[0m, [31m40[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3019:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3019 |[0m    Vuelo([31m"AA"[0m, [31m709[0m, [31m"ATL"[0m, [31m8[0m, [31m28[0m, [31m"MIA"[0m, [31m10[0m, [31m15[0m, [31m0[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3023:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3023 |[0m    Vuelo([31m"AA"[0m, [31m400[0m, [31m"LAX"[0m, [31m7[0m, [31m30[0m, [31m"MIA"[0m, [31m15[0m, [31m30[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3024:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3024 |[0m    Vuelo([31m"AA"[0m, [31m978[0m, [31m"MIA"[0m, [31m8[0m, [31m10[0m, [31m"MSY"[0m, [31m12[0m, [31m4[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3025:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3025 |[0m    Vuelo([31m"AA"[0m, [31m348[0m, [31m"ORD"[0m, [31m6[0m, [31m15[0m, [31m"DFW"[0m, [31m13[0m, [31m6[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3026:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3026 |[0m    Vuelo([31m"AA"[0m, [31m71[0m, [31m"DFW"[0m, [31m16[0m, [31m2[0m, [31m"SFO"[0m, [31m17[0m, [31m43[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3027:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3027 |[0m    Vuelo([31m"AA"[0m, [31m860[0m, [31m"BNA"[0m, [31m19[0m, [31m27[0m, [31m"DTW"[0m, [31m11[0m, [31m55[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3028:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3028 |[0m    Vuelo([31m"AA"[0m, [31m749[0m, [31m"BOS"[0m, [31m18[0m, [31m17[0m, [31m"BNA"[0m, [31m10[0m, [31m12[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3029:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3029 |[0m    Vuelo([31m"AA"[0m, [31m673[0m, [31m"ATL"[0m, [31m19[0m, [31m57[0m, [31m"ORD"[0m, [31m10[0m, [31m45[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3030:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3030 |[0m    Vuelo([31m"AA"[0m, [31m926[0m, [31m"MIA"[0m, [31m19[0m, [31m3[0m, [31m"MSY"[0m, [31m10[0m, [31m17[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3031:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3031 |[0m    Vuelo([31m"AA"[0m, [31m926[0m, [31m"MIA"[0m, [31m19[0m, [31m3[0m, [31m"HOU"[0m, [31m12[0m, [31m15[0m, [31m2[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3032:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3032 |[0m    Vuelo([31m"AA"[0m, [31m586[0m, [31m"DFW"[0m, [31m17[0m, [31m13[0m, [31m"PHL"[0m, [31m11[0m, [31m13[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3033:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3033 |[0m    Vuelo([31m"AA"[0m, [31m637[0m, [31m"PVD"[0m, [31m7[0m, [31m35[0m, [31m"RDU"[0m, [31m12[0m, [31m5[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3034:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3034 |[0m    Vuelo([31m"AA"[0m, [31m329[0m, [31m"DFW"[0m, [31m14[0m, [31m27[0m, [31m"ABQ"[0m, [31m15[0m, [31m15[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: C:\Users\Jose Daniel\Desktop\ProyectoFPFC\src\main\scala\Datos\package.scala:3035:4 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m3035 |[0m    Vuelo([31m"AA"[0m, [31m568[0m, [31m"DFW"[0m, [31m6[0m, [31m56[0m, [31m"DCA"[0m, [31m10[0m, [31m33[0m, [31m0[0m),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m     |[0m    ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m    Not found: Vuelo[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m     |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m1332 errors found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 20 s, completed 20 may 2024 20:55:45[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
