@@ -71,11 +71,7 @@ val itsa4 = itsAireCurso("CLO", "MEX")
 val itsa5 = itsAireCurso("CTG","PTY")
 
 // prueba itinerarioSalida
-<<<<<<< Updated upstream
 val itSalidaCurso = itinerariosSalida(vuelosCurso,aeropuertosCurso)
-=======
-val itSalidaCurso = itinerariosSalida2(vuelosCurso,aeropuertosCurso)
->>>>>>> Stashed changes
 
 val itsal1 = itSalidaCurso("CTG","PTY",11, 40)
 val itsal2 = itSalidaCurso("CTG","PTY",11, 55)
