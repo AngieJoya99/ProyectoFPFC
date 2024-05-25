@@ -4,7 +4,6 @@ import ItinerariosPar._
 import Datos._
 import Benchmark._
 
-
 object Main {
   def main(args: Array[String]): Unit = {
 

@@ -1,5 +1,4 @@
 /*Angie Joya - 2322609
-Johan David Pitto - 1932739
 Miguel Ángel Salcedo - 2242786
 José Daniel Trujillo - 2225611*/
 
@@ -63,8 +62,6 @@ package object ItinerariosPar{
   def itinerariosTiempoPar(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
     val listaIt = itinerariosPar(vuelos,aeropuertos)
     def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
-<<<<<<< Updated upstream
-=======
       def tiempoItinerario (it:Itinerario, arpt:List[Aeropuerto]): Int = {
         val vInicio = it.head
         val vFin = it.last
@@ -79,42 +76,13 @@ package object ItinerariosPar{
         if (hLlegada <= hSalida) (hLlegada+(60*24)-hSalida)
         else (hLlegada-hSalida)
       }
-      
-      val listaEntre = listaIt(cod1, cod2)
-      if (listaEntre.length<=3)(itinerariosTiempo(vuelos,aeropuertos)(cod1, cod2))
-      else{
-        listaEntre.sortBy(it => (tiempoItinerario(it,aeropuertos))).take(3)
-      }
-    }
-    buscarItinerarios
-  }
-  
-  /*
-  def itinerariosTiempoPar(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
-    val listaIt = itinerariosPar(vuelos,aeropuertos)
-    def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
->>>>>>> Stashed changes
-      
-      def tiempoItinerario (it:Itinerario, arpt:List[Aeropuerto]): Int = {
-        val vInicio = it.head
-        val vFin = it.last
-        val GMTSalida = (for(a <- arpt if vInicio.Org == a.Cod) yield a).head.GMT
-        val GMTLlegada = (for(a <- arpt if vFin.Dst == a.Cod) yield a).head.GMT
-        val hSalida  = (vInicio.HS - (GMTSalida/100)*60) + vInicio.MS
-        val hLlegada = (vFin.HS - (GMTLlegada/100)*60) + vFin.MS
-        
-        if (hLlegada <= hSalida) (hLlegada+(60*24)-hSalida)
-        else (hLlegada-hSalida)
-      }
 
       def ordenarPorTiempo(itinerarios:List[Itinerario],arpts:List[Aeropuerto]):List[Itinerario] = {
         itinerarios.sortBy(iti => tiempoItinerario(iti,arpts))
       }
-
+      
       val listaEntre = listaIt(cod1, cod2)
-
-      if (listaEntre.length<=3) (listaEntre)
-
+      if (listaEntre.length<=3)(itinerariosTiempo(vuelos,aeropuertos)(cod1, cod2))
       else{
         val sizePart = (listaEntre.size + 3)/4
 
@@ -131,11 +99,7 @@ package object ItinerariosPar{
     }
     buscarItinerarios
   }
-<<<<<<< Updated upstream
-=======
-  */
->>>>>>> Stashed changes
-
+  
   /** Dada una lista de todos los vuelos disponibles y una lista 
     * de todos los aeropuertos, crea una función que calcula de manera paralela los 3 (si los hay) 
     * itinerarios que minimizan el número de cambios de avión
