@@ -59,10 +59,41 @@ package object ItinerariosPar{
     * @return Función que recibe dos códigos de aeropuerto c1 y c2, y retorna
     * una lista de itinerarios
     */
-  
+
   def itinerariosTiempoPar(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
     val listaIt = itinerariosPar(vuelos,aeropuertos)
     def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
+<<<<<<< Updated upstream
+=======
+      def tiempoItinerario (it:Itinerario, arpt:List[Aeropuerto]): Int = {
+        val vInicio = it.head
+        val vFin = it.last
+        val GMTSalidaLista = (for(a <- arpt if vInicio.Org == a.Cod) yield task(a))
+        val GMTLlegadaLista = (for(a <- arpt if vFin.Dst == a.Cod) yield task(a))
+        val GMTSalida = GMTSalidaLista.map(y => y.join()).head.GMT
+        val GMTLlegada = GMTLlegadaLista.map(y => y.join()).head.GMT
+
+        val hSalida  = (vInicio.HS - (GMTSalida/100)*60) + vInicio.MS
+        val hLlegada = (vFin.HS - (GMTLlegada/100)*60) + vFin.MS
+        
+        if (hLlegada <= hSalida) (hLlegada+(60*24)-hSalida)
+        else (hLlegada-hSalida)
+      }
+      
+      val listaEntre = listaIt(cod1, cod2)
+      if (listaEntre.length<=3)(itinerariosTiempo(vuelos,aeropuertos)(cod1, cod2))
+      else{
+        listaEntre.sortBy(it => (tiempoItinerario(it,aeropuertos))).take(3)
+      }
+    }
+    buscarItinerarios
+  }
+  
+  /*
+  def itinerariosTiempoPar(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
+    val listaIt = itinerariosPar(vuelos,aeropuertos)
+    def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
+>>>>>>> Stashed changes
       
       def tiempoItinerario (it:Itinerario, arpt:List[Aeropuerto]): Int = {
         val vInicio = it.head
@@ -100,6 +131,10 @@ package object ItinerariosPar{
     }
     buscarItinerarios
   }
+<<<<<<< Updated upstream
+=======
+  */
+>>>>>>> Stashed changes
 
   /** Dada una lista de todos los vuelos disponibles y una lista 
     * de todos los aeropuertos, crea una función que calcula de manera paralela los 3 (si los hay) 

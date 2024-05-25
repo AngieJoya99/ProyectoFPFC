@@ -107,7 +107,7 @@ val itscP4 = itsEscPar("CLO", "MEX")
 val itscP5 = itsEscPar("CTG","PTY")
 
 //-------------------------PRUEBAS itinerariosAirePar------------------------------------------
-val itsAirePar = itinerariosAire(vuelosCurso,aeropuertosCurso)
+val itsAirePar = itinerariosAirePar(vuelosCurso,aeropuertosCurso)
 
 val itsaP1 = itsAirePar("MID", "SVCS")
 val itsaP2 = itsAirePar("CLO", "SVCS")

@@ -3,6 +3,7 @@ import scala.collection.parallel.ParSeq
 import Itinerarios._
 import ItinerariosPar._
 package object Datos {
+  
   val aeropuertosCurso = List(
 
     Aeropuerto("CLO", 100, 200, -500), // Cali

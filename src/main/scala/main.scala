@@ -49,6 +49,14 @@ object Main {
     println("\nitsal1 = "+itsal1+"\n"+"itsal2 = "+itsal2+"\n"+"itsal3 = "+itsal3)
     */
 
+/*
+    println(compararItineratiosEscalas(vuelosCurso, aeropuertosCurso, "MID", "SVCS"))
+    println(compararItineratiosEscalas(vuelosCurso, aeropuertosCurso, "CLO", "SVCS"))
+    println(compararItineratiosEscalas(vuelosCurso, aeropuertosCurso, "CLO","SVO"))
+    println(compararItineratiosEscalas(vuelosCurso, aeropuertosCurso, "CLO", "MEX"))
+    println(compararItineratiosEscalas(vuelosCurso, aeropuertosCurso, "CTG","PTY"))
+*/
+
     println(compararItineratiosTiempo(vuelosCurso, aeropuertosCurso, "MID", "SVCS"))
     println(compararItineratiosTiempo(vuelosCurso, aeropuertosCurso, "CLO", "SVCS"))
     println(compararItineratiosTiempo(vuelosCurso, aeropuertosCurso, "CLO","SVO"))
