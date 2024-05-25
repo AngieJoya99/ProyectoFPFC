@@ -22,17 +22,23 @@ package object ItinerariosPar{
 
   //---------------USE LA FUNCION ITINERARIO SEC POR QUE AUN NO ESTABA LA PARALELA------------------------
   def itinerariosPar(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
-    def generarItinerario(cod1: String, cod2: String, visitados: Set[String], vuelosRestantes: List[Vuelo]): List[Itinerario] = vuelosRestantes.flatMap {
-      case vuelo if vuelo.Org == cod1 && vuelo.Dst == cod2 && !visitados.contains(vuelo.Dst) =>
-        List(List(vuelo))
-      case vuelo if vuelo.Org == cod1 && !visitados.contains(vuelo.Dst) =>
-        val nuevosVisitados = visitados + vuelo.Org
-        generarItinerario(vuelo.Dst, cod2, nuevosVisitados, vuelos.filterNot(_ == vuelo)).map(vuelo :: _)
-      case _ => List.empty
+    def generarItinerario(cod1: String, cod2: String, visitados: Set[String], vuelosRestantes: List[Vuelo]): List[Itinerario] = {
+      vuelosRestantes.flatMap {
+        case vuelo if vuelo.Org == cod1 && vuelo.Dst == cod2 && !visitados.contains(vuelo.Dst) =>
+          List(List(vuelo))
+        case vuelo if vuelo.Org == cod1 && !visitados.contains(vuelo.Dst) =>
+          val nuevosVisitados = visitados + vuelo.Org
+          val result = task {
+            generarItinerario(vuelo.Dst, cod2, nuevosVisitados, vuelos.filterNot(_ == vuelo)).map(vuelo :: _)
+          }
+          result.join()
+        case _ =>
+          List.empty
+      }
     }
+
     (cod1: String, cod2: String) => generarItinerario(cod1, cod2, Set.empty, vuelos)
   }
-
 
   /** Dada una lista de todos los vuelos disponibles y una lista 
     * de todos los aeropuertos, crea una función que calcula de manera paralela todos
