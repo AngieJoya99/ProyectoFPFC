@@ -1,3 +1,7 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(console, Some(12182a6b-4f7d-48ec-a457-1b802c3b214d), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / console[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 7 Scala sources to E:\Universidad\Ingeniería de Sistemas\3 - Tercer Semestre\Fund. Prog. Funcional y Concurrente\ProyectoFPFC\target\scala-3.3.3\classes ...[0m
 [0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E106] Naming Error: E:\Universidad\Ingeniería de Sistemas\3 - Tercer Semestre\Fund. Prog. Funcional y Concurrente\ProyectoFPFC\src\main\scala\ItinerariosPar\package.scala:9:0 [0m[0m[0m
 [0m[[0m[31merror[0m] [0m[0m[31m  9 |[0m[33mpackage[0m [33mobject[0m ItinerariosPar{[0m
 [0m[[0m[31merror[0m] [0m[0m[31m[31m    |[0m^[0m[0m
@@ -200,3 +204,6 @@
 [0m[[0m[31merror[0m] [0m[0m[31m    |[0m[0m
 [0m[[0m[31merror[0m] [0m[0m[31m    |[0m longer explanation available when compiling with `-explain`[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 9 s, completed 25/05/2024, 12:23:02 p. m.[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m

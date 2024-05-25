@@ -2,6 +2,7 @@ import common._
 import Itinerarios._
 import ItinerariosPar._
 import Datos._
+import Benchmark._
 
 
 object Main {
@@ -48,6 +49,14 @@ object Main {
     println("\nitsal1 = "+itsal1+"\n"+"itsal2 = "+itsal2+"\n"+"itsal3 = "+itsal3)
     */
 
+    println(compararItineratiosTiempo(vuelosCurso, aeropuertosCurso, "MID", "SVCS"))
+    println(compararItineratiosTiempo(vuelosCurso, aeropuertosCurso, "CLO", "SVCS"))
+    println(compararItineratiosTiempo(vuelosCurso, aeropuertosCurso, "CLO","SVO"))
+    println(compararItineratiosTiempo(vuelosCurso, aeropuertosCurso, "CLO", "MEX"))
+    println(compararItineratiosTiempo(vuelosCurso, aeropuertosCurso, "CTG","PTY"))
+
+    
 
   }
+
 }

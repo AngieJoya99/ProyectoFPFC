@@ -1,3 +1,4 @@
-[debug] not up to date. inChanged = false, force = false
-[debug] Updating ProjectRef(uri("file:/C:/Users/Jose%20Daniel/Desktop/ProyectoFPFC/project/"), "proyectofpfc-build")...
-[debug] Done updating ProjectRef(uri("file:/C:/Users/Jose%20Daniel/Desktop/ProyectoFPFC/project/"), "proyectofpfc-build")
+[0m[[0m[33mwarn[0m] [0m[0msbt-bloop_2.12_1.0-1.5.17-sources.jar no longer exists at C:\Users\Jose Daniel\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\ch\epfl\scala\sbt-bloop_2.12_1.0\1.5.17\sbt-bloop_2.12_1.0-1.5.17-sources.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mnot up to date. inChanged = false, force = false[0m
+[0m[[0m[0mdebug[0m] [0m[0mUpdating ProjectRef(uri("file:/E:/Universidad/Ingeniería%20de%20Sistemas/3%20-%20Tercer%20Semestre/Fund.%20Prog.%20Funcional%20y%20Concurrente/ProyectoFPFC/project/"), "proyectofpfc-build")...[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone updating ProjectRef(uri("file:/E:/Universidad/Ingeniería%20de%20Sistemas/3%20-%20Tercer%20Semestre/Fund.%20Prog.%20Funcional%20y%20Concurrente/ProyectoFPFC/project/"), "proyectofpfc-build")[0m
