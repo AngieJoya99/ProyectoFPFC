@@ -1,9 +1,6 @@
 /*Angie Joya - 2322609
 Miguel Ángel Salcedo - 2242786
 José Daniel Trujillo - 2225611*/
-import common._
-import scala.collection.parallel.CollectionConverters._
-import scala.collection.parallel.immutable._
 
 package object Itinerarios{
 

@@ -5,10 +5,19 @@ José Daniel Trujillo - 2225611*/
 import common._
 import Itinerarios._
 import scala.collection.parallel.immutable._
+import scala.collection.parallel.CollectionConverters._
 
 package object ItinerariosPar{
 
-  //---------------USE LA FUNCION ITINERARIO SEC POR QUE AUN NO ESTABA LA PARALELA------------------------
+/** Dada una lista de todos los vuelos disponibles y una lista 
+    * de todos los aeropuertos, crea una función que calcula de manera paralela todos
+    * los itinearios entre 2 aerpuertos que recibe como parámetro
+    * @param vuelos Lista de todos los vuelos disponibles
+    * @param aeropuertos Lista de todos los aeropuertos
+    * @return Función que recibe dos códigos de aeropuerto cod1 y cod2, y retorna
+    * todos los itinerarios entre los dos aeropuertos
+    */
+
   def itinerariosPar(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
     def generarItinerario(cod1: String, cod2: String, visitados: Set[String], vuelosRestantes: List[Vuelo]): List[Itinerario] = {
       vuelosRestantes.flatMap {
@@ -26,29 +35,7 @@ package object ItinerariosPar{
     }
 
     (cod1: String, cod2: String) => generarItinerario(cod1, cod2, Set.empty,vuelos)
-  } 
-
-
-  /** Dada una lista de todos los vuelos disponibles y una lista 
-    * de todos los aeropuertos, crea una función que calcula de manera paralela todos
-    * los itinearios entre 2 aerpuertos que recibe como parámetro
-    * @param vuelos Lista de todos los vuelos disponibles
-    * @param aeropuertos Lista de todos los aeropuertos
-    * @return Función que recibe dos códigos de aeropuerto cod1 y cod2, y retorna
-    * todos los itinerarios entre los dos aeropuertos
-    */
-
-  /*def itinerariosPar(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
-    def generarItinerario(cod1: String, cod2: String, visitados: Set[String], vuelosRestantes: List[Vuelo]): List[Itinerario] = vuelosRestantes.flatMap {
-      case vuelo if vuelo.Org == cod1 && vuelo.Dst == cod2 && !visitados.contains(vuelo.Dst) =>
-        List(List(vuelo))
-      case vuelo if vuelo.Org == cod1 && !visitados.contains(vuelo.Dst) =>
-        val nuevosVisitados = visitados + vuelo.Org
-        generarItinerario(vuelo.Dst, cod2, nuevosVisitados, vuelos.filterNot(_ == vuelo)).map(vuelo :: _)
-      case _ => List.empty
-    }
-    (cod1: String, cod2: String) => generarItinerario(cod1, cod2, Set.empty, vuelos)
-  }*/
+  }
 
   /** Dada una lista de todos los vuelos disponibles y una lista 
     * de todos los aeropuertos, crea una función que calcula de manera paralela los 3 (si los hay) 
@@ -87,10 +74,10 @@ package object ItinerariosPar{
         val sizePart = (listaEntre.size + 3)/4
 
         val (part1,part2,part3,part4) = parallel(
-            task(ordenarPorTiempo(listaEntre.slice(0,sizePart),aeropuertos).take(3)).join,
-            task(ordenarPorTiempo(listaEntre.slice(sizePart,2*sizePart),aeropuertos).take(3)).join,
-            task(ordenarPorTiempo(listaEntre.slice(2*sizePart,3*sizePart),aeropuertos).take(3)).join,
-            task(ordenarPorTiempo(listaEntre.slice(3*sizePart,listaEntre.size),aeropuertos).take(3)).join
+            ordenarPorTiempo(listaEntre.slice(0,sizePart),aeropuertos).take(3),
+            ordenarPorTiempo(listaEntre.slice(sizePart,2*sizePart),aeropuertos).take(3),
+            ordenarPorTiempo(listaEntre.slice(2*sizePart,3*sizePart),aeropuertos).take(3),
+            ordenarPorTiempo(listaEntre.slice(3*sizePart,listaEntre.size),aeropuertos).take(3)
         )
 
         val listaMenorTiempo = (part1++part2++part3++part4).sortBy(iti => tiempoItinerario(iti,aeropuertos)).take(3)
@@ -130,10 +117,10 @@ package object ItinerariosPar{
         }
 
         val (part1Ord:List[Itinerario], part2Ord:List[Itinerario], part3Ord:List[Itinerario], part4Ord:List[Itinerario]) = parallel(
-          task(ordenarPorEscala(particion1).take(3)).join,
-          task(ordenarPorEscala(particion2).take(3)).join,
-          task(ordenarPorEscala(particion3).take(3)).join,
-          task(ordenarPorEscala(particion4).take(3)).join
+          ordenarPorEscala(particion1).take(3),
+          ordenarPorEscala(particion2).take(3),
+          ordenarPorEscala(particion3).take(3),
+          ordenarPorEscala(particion4).take(3)
         )
         val listaMenorEsc = ordenarPorEscala(part1Ord ++ part2Ord ++ part3Ord ++ part4Ord).take(3)
         listaMenorEsc
@@ -157,8 +144,10 @@ package object ItinerariosPar{
     def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
 
       def horaGMT (v:Vuelo, arpt:List[Aeropuerto]): (Int,Int) ={
-        val GMTSalida = (for(a <- arpt if v.Org == a.Cod) yield a).head.GMT
-        val GMTLlegada = (for(a <- arpt if v.Dst == a.Cod) yield a).head.GMT
+        val GMTSalidaLista = (for(a <- arpt if v.Org == a.Cod) yield task(a))
+        val GMTLlegadaLista = (for(a <- arpt if v.Dst == a.Cod) yield task(a))
+        val GMTSalida = GMTSalidaLista.map(y => y.join()).head.GMT
+        val GMTLlegada = GMTLlegadaLista.map(y => y.join()).head.GMT
         val hSalida  = ((v.HS - (GMTSalida/100))*60) + v.MS
         val hLlegada = ((v.HL - (GMTLlegada/100))*60) + v.ML
 
@@ -177,13 +166,13 @@ package object ItinerariosPar{
         val sizePart = (listaEntre.size + 3)/4
 
         val (part1,part2,part3,part4) = parallel(
-          task(ordenarPorAire(listaEntre.slice(0,sizePart),aeropuertos).take(3)).join,
-          task(ordenarPorAire(listaEntre.slice(sizePart,2*sizePart),aeropuertos).take(3)).join,
-          task(ordenarPorAire(listaEntre.slice(2*sizePart,3*sizePart),aeropuertos).take(3)).join,
-          task(ordenarPorAire(listaEntre.slice(3*sizePart,listaEntre.size),aeropuertos).take(3)).join
+          ordenarPorAire(listaEntre.slice(0,sizePart),aeropuertos).take(3),
+          ordenarPorAire(listaEntre.slice(sizePart,2*sizePart),aeropuertos).take(3),
+          ordenarPorAire(listaEntre.slice(2*sizePart,3*sizePart),aeropuertos).take(3),
+          ordenarPorAire(listaEntre.slice(3*sizePart,listaEntre.size),aeropuertos).take(3)
         )
         
-        val listaMenorAire = ordenarPorAire((part1++part2++part3++part4),aeropuertos)
+        val listaMenorAire = ordenarPorAire((part1++part2++part3++part4),aeropuertos).take(3)
         listaMenorAire          
       }
     }
@@ -209,4 +198,32 @@ package object ItinerariosPar{
     }
     calcularItinerario
   }
+
+  /*def itinerariosTiempoPar2(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
+    val listaIt = itinerariosPar(vuelos,aeropuertos)
+    def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
+      def tiempoItinerario (it:Itinerario, arpt:List[Aeropuerto]): Int = {
+        val vInicio = it.head
+        val vFin = it.last
+        val GMTSalidaLista = (for(a <- arpt if vInicio.Org == a.Cod) yield task(a))
+        val GMTLlegadaLista = (for(a <- arpt if vFin.Dst == a.Cod) yield task(a))
+        val GMTSalida = GMTSalidaLista.map(y => y.join()).head.GMT
+        val GMTLlegada = GMTLlegadaLista.map(y => y.join()).head.GMT
+
+        val hSalida  = (vInicio.HS - (GMTSalida/100)*60) + vInicio.MS
+        val hLlegada = (vFin.HS - (GMTLlegada/100)*60) + vFin.MS
+        
+        if (hLlegada <= hSalida) (hLlegada+(60*24)-hSalida)
+        else (hLlegada-hSalida)
+      }
+
+      val listaEntre = listaIt(cod1, cod2).par
+      if (listaEntre.length<=3)(itinerariosTiempo(vuelos,aeropuertos)(cod1, cod2))
+      else{
+        listaEntre.sortBy(it => (tiempoItinerario(it,aeropuertos)))
+        
+      }
+    }
+    buscarItinerarios
+  }*/
 }
