@@ -2,23 +2,12 @@
 Johan David Pitto - 1932739
 Miguel Ángel Salcedo - 2242786
 José Daniel Trujillo - 2225611*/
+
 import common._
-//import scala.collection.parallel.CollectionConverters._
+import Itinerarios._
 import scala.collection.parallel.immutable._
 
 package object ItinerariosPar{
-   
-  case class Aeropuerto (Cod: String , X: Int , Y: Int , GMT: Int )
-  /*(Cod:Código del Aeropuerto, X:Coordenada en X, Y:Coordenada en Y, 
-  GMT: Entero que representa la hora)*/
-
-  case class Vuelo (Aln: String , Num: Int , Org: String , HS: Int , MS: Int , Dst: String , HL: Int , ML: Int , Esc: Int )
-  /*(Aln: Nombre Aerolínea, Num: Número de Vuelo, Org: Código de Aeropuerto de Origen,
-  HS: Hora (hh) local de salida, MS: Minutos (mm) de hora local de salida,
-  Dst: Código de Aeropuerto de destino, HL: Hora (hh) local de llegada, 
-  ML: Minutos (mm) de hora local de llegada, Esc: Número de escalas (mismo avión))*/
-  
-  type Itinerario = List[Vuelo]
 
   //---------------USE LA FUNCION ITINERARIO SEC POR QUE AUN NO ESTABA LA PARALELA------------------------
   def itinerariosPar(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
@@ -37,8 +26,9 @@ package object ItinerariosPar{
       }
     }
 
-    (cod1: String, cod2: String) => generarItinerario(cod1, cod2, Set.empty, vuelos)
-  }
+    (cod1: String, cod2: String) => generarItinerario(cod1, cod2, Set.empty,vuelos)
+  } 
+
 
   /** Dada una lista de todos los vuelos disponibles y una lista 
     * de todos los aeropuertos, crea una función que calcula de manera paralela todos
@@ -73,7 +63,7 @@ package object ItinerariosPar{
   def itinerariosTiempoPar(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
     val listaIt = itinerariosPar(vuelos,aeropuertos)
     def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
-
+      
       def tiempoItinerario (it:Itinerario, arpt:List[Aeropuerto]): Int = {
         val vInicio = it.head
         val vFin = it.last
@@ -92,7 +82,7 @@ package object ItinerariosPar{
 
       val listaEntre = listaIt(cod1, cod2)
 
-      if (listaEntre.length<=3)(listaEntre)
+      if (listaEntre.length<=3) (listaEntre)
 
       else{
         val sizePart = (listaEntre.size + 3)/4
@@ -110,7 +100,7 @@ package object ItinerariosPar{
     }
     buscarItinerarios
   }
-  
+
   /** Dada una lista de todos los vuelos disponibles y una lista 
     * de todos los aeropuertos, crea una función que calcula de manera paralela los 3 (si los hay) 
     * itinerarios que minimizan el número de cambios de avión
@@ -162,7 +152,7 @@ package object ItinerariosPar{
     * una lista de itinerarios
     */
 
-    def itinerariosAire(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
+    def itinerariosAirePar(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
     val listaIt = itinerariosPar(vuelos,aeropuertos)
 
     def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
@@ -200,14 +190,7 @@ package object ItinerariosPar{
     }
     buscarItinerarios
   }
-
-  def itinerariosAirePar(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
-    def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
-      List.empty[Itinerario]
-    }
-    buscarItinerarios    
-  }
-
+  
   /** Dada una lista de todos los vuelos disponibles y una lista 
     * de todos los aeropuertos, crea una función que calcula de manera paralela
     * un itineario que optimiza la hora de salida para llegar a tiempo a la cita
@@ -216,6 +199,7 @@ package object ItinerariosPar{
     * @return Función que recibe dos códigos de aeropuerto c1 y c2 y una hora de
     * cita en c2 h:m, y retorna un itinerario
     */
+
   def itinerariosSalidaPar(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String,Int,Int) => Itinerario = {
     val listaIt = itinerariosPar(vuelos,aeropuertos)
     def calcularItinerario(cod1:String, cod2:String, HC:Int ,MC:Int):Itinerario={

@@ -704,7 +704,6 @@ package object Datos {
     Vuelo("CO", 119, "TPA", 14, 20, "MSY", 14, 54, 0),
     Vuelo("CO", 497, "BOS", 17, 0, "DEN", 19, 50, 0),
     Vuelo("DL", 864, "MSY", 6, 35, "PHL", 11, 50, 1),
-
     Vuelo("DL", 548, "ATL", 13, 44, "RDU", 15, 0, 0),
     Vuelo("DL", 309, "DFW", 15, 1, "DEN", 15, 55, 0),
     Vuelo("DL", 648, "PHX", 8, 30, "PHL", 16, 15, 1),
