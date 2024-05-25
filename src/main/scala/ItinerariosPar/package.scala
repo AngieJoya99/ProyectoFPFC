@@ -2,7 +2,6 @@
 Johan David Pitto - 1932739
 Miguel Ángel Salcedo - 2242786
 José Daniel Trujillo - 2225611*/
-
 import common._
 //import scala.collection.parallel.CollectionConverters._
 import scala.collection.parallel.immutable._
@@ -66,12 +65,46 @@ package object ItinerariosPar{
     */
   
   def itinerariosTiempoPar(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
+    val listaIt = itinerariosPar(vuelos,aeropuertos)
     def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
-      List.empty[Itinerario]
+
+      def tiempoItinerario (it:Itinerario, arpt:List[Aeropuerto]): Int = {
+        val vInicio = it.head
+        val vFin = it.last
+        val GMTSalida = (for(a <- arpt if vInicio.Org == a.Cod) yield a).head.GMT
+        val GMTLlegada = (for(a <- arpt if vFin.Dst == a.Cod) yield a).head.GMT
+        val hSalida  = (vInicio.HS - (GMTSalida/100)*60) + vInicio.MS
+        val hLlegada = (vFin.HS - (GMTLlegada/100)*60) + vFin.MS
+        
+        if (hLlegada <= hSalida) (hLlegada+(60*24)-hSalida)
+        else (hLlegada-hSalida)
+      }
+
+      def ordenarPorTiempo(itinerarios:List[Itinerario],arpts:List[Aeropuerto]):List[Itinerario] = {
+        itinerarios.sortBy(iti => tiempoItinerario(iti,arpts))
+      }
+
+      val listaEntre = listaIt(cod1, cod2)
+
+      if (listaEntre.length<=3)(listaEntre)
+
+      else{
+        val sizePart = (listaEntre.size + 3)/4
+
+        val (part1,part2,part3,part4) = parallel(
+            task(ordenarPorTiempo(listaEntre.slice(0,sizePart),aeropuertos).take(3)).join,
+            task(ordenarPorTiempo(listaEntre.slice(sizePart,2*sizePart),aeropuertos).take(3)).join,
+            task(ordenarPorTiempo(listaEntre.slice(2*sizePart,3*sizePart),aeropuertos).take(3)).join,
+            task(ordenarPorTiempo(listaEntre.slice(3*sizePart,listaEntre.size),aeropuertos).take(3)).join
+        )
+
+        val listaMenorTiempo = (part1++part2++part3++part4).sortBy(iti => tiempoItinerario(iti,aeropuertos)).take(3)
+        listaMenorTiempo
+      }
     }
     buscarItinerarios
   }
-
+  
   /** Dada una lista de todos los vuelos disponibles y una lista 
     * de todos los aeropuertos, crea una función que calcula de manera paralela los 3 (si los hay) 
     * itinerarios que minimizan el número de cambios de avión
@@ -95,7 +128,7 @@ package object ItinerariosPar{
         val particion1 = itinerariosTotales.slice(0,tamañoParticion)
         val particion2 = itinerariosTotales.slice(tamañoParticion,2*tamañoParticion)
         val particion3 = itinerariosTotales.slice(2*tamañoParticion,3*tamañoParticion)
-        val particion4 = itinerariosTotales.slice(3*tamañoParticion,tamañoParticion)
+        val particion4 = itinerariosTotales.slice(3*tamañoParticion,itinerariosTotales.size)
 
         def ordenarPorEscala(itinearios:List[Itinerario]): List[Itinerario] = {
           itinearios.sortBy(iti => ( iti.map(_.Esc)).sum + (iti.size -1))
@@ -107,10 +140,9 @@ package object ItinerariosPar{
           task(ordenarPorEscala(particion3).take(3)).join,
           task(ordenarPorEscala(particion4).take(3)).join
         )
-        val listaOriginal = part1Ord ++ part2Ord ++ part3Ord ++ part4Ord
-        
-        ordenarPorEscala(listaOriginal).take(3)
-      }        
+        val listaMenorEsc = ordenarPorEscala(part1Ord ++ part2Ord ++ part3Ord ++ part4Ord).take(3)
+        listaMenorEsc
+      }
     }   
     encontrarMenorEsc
   }
@@ -123,6 +155,46 @@ package object ItinerariosPar{
     * @return Función que recibe dos códigos de aeropuerto c1 y c2, y retorna
     * una lista de itinerarios
     */
+
+    def itinerariosAire(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
+    val listaIt = itinerariosPar(vuelos,aeropuertos)
+
+    def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
+
+      def horaGMT (v:Vuelo, arpt:List[Aeropuerto]): (Int,Int) ={
+        val GMTSalida = (for(a <- arpt if v.Org == a.Cod) yield a).head.GMT
+        val GMTLlegada = (for(a <- arpt if v.Dst == a.Cod) yield a).head.GMT
+        val hSalida  = ((v.HS - (GMTSalida/100))*60) + v.MS
+        val hLlegada = ((v.HL - (GMTLlegada/100))*60) + v.ML
+
+        if (hLlegada <= hSalida) (hSalida,hLlegada+(60*24)) else (hSalida,hLlegada)
+      }
+
+      def ordenarPorAire(itinerarios:List[Itinerario],arpt:List[Aeropuerto]):List[Itinerario] = {
+        itinerarios.sortBy(iti => (for (v <- iti) yield((horaGMT(v,arpt)._2 - horaGMT(v,arpt)._1))).sum)
+      }
+
+      val listaEntre = listaIt(cod1, cod2)
+
+      if (listaEntre.length<=3)(listaEntre)
+
+      else{
+        val sizePart = (listaEntre.size + 3)/4
+
+        val (part1,part2,part3,part4) = parallel(
+          task(ordenarPorAire(listaEntre.slice(0,sizePart),aeropuertos).take(3)).join,
+          task(ordenarPorAire(listaEntre.slice(sizePart,2*sizePart),aeropuertos).take(3)).join,
+          task(ordenarPorAire(listaEntre.slice(2*sizePart,3*sizePart),aeropuertos).take(3)).join,
+          task(ordenarPorAire(listaEntre.slice(3*sizePart,listaEntre.size),aeropuertos).take(3)).join
+        )
+        
+        val listaMenorAire = ordenarPorAire((part1++part2++part3++part4),aeropuertos)
+        listaMenorAire          
+      }
+    }
+    buscarItinerarios
+  }
+
   def itinerariosAirePar(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
     def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
       List.empty[Itinerario]
@@ -132,7 +204,7 @@ package object ItinerariosPar{
 
   /** Dada una lista de todos los vuelos disponibles y una lista 
     * de todos los aeropuertos, crea una función que calcula de manera paralela
-    * un itinearios que optimiza la hora de salida para llegar a tiempo a la cita
+    * un itineario que optimiza la hora de salida para llegar a tiempo a la cita
     * @param vuelos Lista de todos los vuelos disponibles
     * @param aeropuertos Lista de todos los aeropuertos
     * @return Función que recibe dos códigos de aeropuerto c1 y c2 y una hora de

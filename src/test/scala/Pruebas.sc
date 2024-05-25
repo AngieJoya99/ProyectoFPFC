@@ -55,6 +55,7 @@ val itsc5 = itsEscalasCurso("CTG","PTY")
 // prueba itinerariosAire
 val itsAireCurso = itinerariosAire(vuelosCurso,aeropuertosCurso)
 
+
 val itsa1 = itsAireCurso("MID", "SVCS")
 val itsa2 = itsAireCurso("CLO", "SVCS")
 

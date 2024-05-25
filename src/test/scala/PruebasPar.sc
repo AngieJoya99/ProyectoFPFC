@@ -77,7 +77,48 @@ itsEscPar200C("ORD","TPA")
 itsAirPar200C("ORD","TPA")
 itsSalPar200C("ORD","TPA", 18, 30)
 
-/*
+//------------------------PRUEBAS itinerariosTiempoPar------------------------------------------
+val itsTiempoPar = itinerariosTiempoPar(vuelosCurso,aeropuertosCurso)
+
+val itstP1 = itsTiempoPar("MID", "SVCS")
+val itstP2 = itsTiempoPar("CLO", "SVCS")
+
+val itstP3 = itsTiempoPar("CLO","SVO")
+
+val itstP4 = itsTiempoPar("CLO", "MEX")
+
+val itstP5 = itsTiempoPar("CTG","PTY")
+
+//------------------------PRUEBAS itinerariosEscalasPar-----------------------------------------
+val itsEscPar = itinerariosEscalasPar(vuelosCurso,aeropuertosCurso)
+
+val itscP1 = itsEscPar("MID", "SVCS")
+val itscP2 = itsEscPar("CLO", "SVCS")
+
+// 4 itinerarios CLO-SVO
+
+val itscP3 = itsEscPar("CLO","SVO")
+
+//2 itinerarios CLO-MEX
+
+val itscP4 = itsEscPar("CLO", "MEX")
+
+//2 itinerarios CTG-PTY
+val itscP5 = itsEscPar("CTG","PTY")
+
+//-------------------------PRUEBAS itinerariosAirePar------------------------------------------
+val itsAirePar = itinerariosAire(vuelosCurso,aeropuertosCurso)
+
+val itsaP1 = itsAirePar("MID", "SVCS")
+val itsaP2 = itsAirePar("CLO", "SVCS")
+
+val itsaP3 = itsAirePar("CLO","SVO")
+
+val itsaP4 = itsAirePar("CLO", "MEX")
+
+val itsaP5 = itsAirePar("CTG","PTY")
+
+
 val its300CPar = itinerariosPar((vuelosC1++vuelosC2++vuelosC3), aeropuertos)
 its300CPar("ORD","TPA")
 
