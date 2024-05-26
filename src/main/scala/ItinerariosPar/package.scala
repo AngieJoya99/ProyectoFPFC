@@ -172,8 +172,8 @@ package object ItinerariosPar{
           ordenarPorAire(listaEntre.slice(3*sizePart,listaEntre.size),aeropuertos).take(3)
         )
         
-        val listaMenorAire = ordenarPorAire((part1++part2++part3++part4),aeropuertos).take(3)
-        listaMenorAire          
+        val listaMenorAire = ordenarPorAire((part1++part2++part3++part4),aeropuertos)
+        listaMenorAire.take(3)
       }
     }
     buscarItinerarios

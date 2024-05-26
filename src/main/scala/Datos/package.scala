@@ -5,7 +5,6 @@ import ItinerariosPar._
 package object Datos {
   
   val aeropuertosCurso = List(
-
     Aeropuerto("CLO", 100, 200, -500), // Cali
     Aeropuerto("BOG", 300, 500, -500), // Bogotá
     Aeropuerto("MDE", 200, 600, -500), // Medellín
@@ -25,6 +24,7 @@ package object Datos {
     Aeropuerto("DXB", 9500, 11500, 400), // Dubai
     Aeropuerto("SVO", 12500, 12500, 300) // Moscú
   )
+
   val vuelosCurso = List(
     Vuelo("AIRVZLA", 601, "MID", 5, 0, "SVCS", 6, 0, 0),
     Vuelo("AIRVZLA", 602, "SVCS", 6, 30, "MID", 7, 30, 0),
@@ -75,7 +75,7 @@ package object Datos {
     Aeropuerto("TPA", 500, 360, -600)
   )
 
- /* val vuelos=List(
+ /*val vuelos=List(
     Vuelo("4X", 373, "HOU", 13, 15, "MSY", 15, 10, 1),
     Vuelo("4X", 201, "MSY", 8, 35, "HOU", 12, 20, 2),
     Vuelo("4X", 372, "MSY", 11, 0, "HOU", 12, 55, 1),
@@ -2977,7 +2977,7 @@ package object Datos {
   //________________________________________________________
 
   //longitud 15
-/*
+
   val vuelosA1= List(
     Vuelo("4X", 373, "HOU", 13, 15, "MSY", 15, 10, 1),
     Vuelo("4X", 201, "MSY", 8, 35, "HOU", 12, 20, 2),
@@ -4312,7 +4312,7 @@ package object Datos {
     Vuelo("PA", 436, "MIA", 17, 35, "BOS", 10, 56, 0)
   )
 
-/*  val vuelosD2= List(
+  val vuelosD2= List(
     Vuelo("PA", 427, "JFK", 14, 45, "MIA", 17, 57, 0),
     Vuelo("PA", 482, "LAX", 18, 0, "SFO", 19, 17, 0),
     Vuelo("PA", 429, "BOS", 14, 20, "MIA", 17, 44, 0),
@@ -5316,5 +5316,5 @@ package object Datos {
     Vuelo("WN", 603, "LAX", 7, 0, "BNA", 13, 55, 1),
     Vuelo("WN", 663, "STL", 21, 20, "HOU", 13, 15, 0),
     Vuelo("WN", 952, "LAX", 11, 15, "PHX", 13, 25, 0)
-  )*/*/
+  )
 }
