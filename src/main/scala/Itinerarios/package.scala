@@ -26,13 +26,13 @@ package object Itinerarios{
     */
   def itinerarios(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
     val vuelosPorOrigen: Map[String, List[Vuelo]] = vuelos.groupBy(_.Org)
-    def generarItinerario(cod1: String, cod2: String, visitados: Set[String], vuelosRestantes: List[Vuelo]): List[Itinerario] = {
+    def generarItinerario(cod1: String, cod2: String, visitados: Set[String]): List[Itinerario] = {
       vuelosPorOrigen.getOrElse(cod1, List.empty).flatMap {
         case vuelo if vuelo.Org == cod1 && vuelo.Dst == cod2 && !visitados.contains(vuelo.Dst) =>
           List(List(vuelo))
         case vuelo if vuelo.Org == cod1 && !visitados.contains(vuelo.Dst) =>
           val nuevosVisitados = visitados + vuelo.Org
-          generarItinerario(vuelo.Dst, cod2, nuevosVisitados, vuelosRestantes.filterNot(_ == vuelo)).map(vuelo :: _)
+          generarItinerario(vuelo.Dst, cod2, nuevosVisitados).map(vuelo :: _)
         case _ => List.empty
       }
     }
