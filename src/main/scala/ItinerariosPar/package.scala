@@ -20,26 +20,22 @@ package object ItinerariosPar{
 
   def itinerariosPar(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
     val vuelosPorOrigen: Map[String, List[Vuelo]] = vuelos.groupBy(_.Org)
-    def generarItinerario(cod1: String, cod2: String, visitados: Set[String], vuelosRestantes: List[Vuelo]): List[Itinerario] = {
+
+    def generarItinerario(cod1: String, cod2: String, visitados: Set[String]): List[Itinerario] = {
       val vuelosDesdeOrigen = vuelosPorOrigen.getOrElse(cod1, List.empty)
-      val results = vuelosDesdeOrigen.map { vuelo =>
-        task {
-          vuelo match {
-            case _ if vuelo.Org == cod1 && vuelo.Dst == cod2 && !visitados.contains(vuelo.Dst) =>
-              List(List(vuelo))
-            case _ if vuelo.Org == cod1 && !visitados.contains(vuelo.Dst) =>
-              val nuevosVisitados = visitados + vuelo.Org
-              generarItinerario(vuelo.Dst, cod2, nuevosVisitados, vuelosRestantes.filterNot(_ == vuelo)).map(vuelo :: _)
-            case _ =>
-              List.empty
-          }
-        }
+      val resultados = vuelosDesdeOrigen.par.flatMap {
+        case vuelo if vuelo.Org == cod1 && vuelo.Dst == cod2 && !visitados.contains(vuelo.Dst) =>
+          List(List(vuelo))
+        case vuelo if vuelo.Org == cod1 && !visitados.contains(vuelo.Dst) =>
+          val nuevosVisitados = visitados + vuelo.Org
+          task {
+            generarItinerario(vuelo.Dst, cod2, nuevosVisitados).map(vuelo :: _)
+          }.join()
+        case _ => List.empty
       }
-
-      results.flatMap(_.join())
+      resultados.toList
     }
-
-    (cod1: String, cod2: String) => generarItinerario(cod1, cod2, Set.empty, vuelos)
+    (cod1: String, cod2: String) => generarItinerario(cod1, cod2, Set.empty)
   }
 
   /** Dada una lista de todos los vuelos disponibles y una lista 
