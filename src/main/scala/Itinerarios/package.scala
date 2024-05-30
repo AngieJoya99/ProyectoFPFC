@@ -37,7 +37,7 @@ package object Itinerarios{
       }
     }
 
-    (cod1: String, cod2: String) => generarItinerario(cod1, cod2, Set.empty, vuelos)
+    (cod1: String, cod2: String) => generarItinerario(cod1, cod2, Set.empty)
   }
    
   /** Dada una lista de todos los vuelos disponibles y una lista 
