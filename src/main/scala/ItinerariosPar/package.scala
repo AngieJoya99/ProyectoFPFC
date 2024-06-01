@@ -22,19 +22,20 @@ package object ItinerariosPar{
     val vuelosPorOrigen: Map[String, List[Vuelo]] = vuelos.groupBy(_.Org)
 
     def generarItinerario(cod1: String, cod2: String, visitados: Set[String]): List[Itinerario] = {
-      val vuelosDesdeOrigen = vuelosPorOrigen.getOrElse(cod1, List.empty)
-      val resultados = vuelosDesdeOrigen.par.flatMap {
+      val resultadosParalelos = vuelosPorOrigen.getOrElse(cod1, List.empty).flatMap {
         case vuelo if vuelo.Org == cod1 && vuelo.Dst == cod2 && !visitados.contains(vuelo.Dst) =>
-          List(List(vuelo))
+          List(task { List(List(vuelo))})
         case vuelo if vuelo.Org == cod1 && !visitados.contains(vuelo.Dst) =>
           val nuevosVisitados = visitados + vuelo.Org
-          task {
+          List(task {
             generarItinerario(vuelo.Dst, cod2, nuevosVisitados).map(vuelo :: _)
-          }.join()
+          })
         case _ => List.empty
       }
-      resultados.toList
+
+      resultadosParalelos.flatMap(_.join())
     }
+
     (cod1: String, cod2: String) => generarItinerario(cod1, cod2, Set.empty)
   }
 
