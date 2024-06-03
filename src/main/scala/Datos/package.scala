@@ -1,10 +1,15 @@
 import scala.collection.parallel.CollectionConverters._
 import scala.collection.parallel.ParSeq
-import Itinerarios._
-import ItinerariosPar._
 package object Datos {
-  
+  case class Aeropuerto(Cod: String, X: Int, Y: Int, GMT: Int)
+
+  case class Vuelo(Aln: String, Num: Int, Org: String, HS: Int, MS: Int, Dst: String, HL: Int, ML: Int, Esc: Int)
+
+  type Itinerario = List[Vuelo]
+  type ItinerarioPar = ParSeq[Vuelo]
+
   val aeropuertosCurso = List(
+
     Aeropuerto("CLO", 100, 200, -500), // Cali
     Aeropuerto("BOG", 300, 500, -500), // Bogotá
     Aeropuerto("MDE", 200, 600, -500), // Medellín
@@ -24,7 +29,6 @@ package object Datos {
     Aeropuerto("DXB", 9500, 11500, 400), // Dubai
     Aeropuerto("SVO", 12500, 12500, 300) // Moscú
   )
-
   val vuelosCurso = List(
     Vuelo("AIRVZLA", 601, "MID", 5, 0, "SVCS", 6, 0, 0),
     Vuelo("AIRVZLA", 602, "SVCS", 6, 30, "MID", 7, 30, 0),
@@ -75,7 +79,7 @@ package object Datos {
     Aeropuerto("TPA", 500, 360, -600)
   )
 
- /*val vuelos=List(
+ /* val vuelos=List(
     Vuelo("4X", 373, "HOU", 13, 15, "MSY", 15, 10, 1),
     Vuelo("4X", 201, "MSY", 8, 35, "HOU", 12, 20, 2),
     Vuelo("4X", 372, "MSY", 11, 0, "HOU", 12, 55, 1),
@@ -705,6 +709,7 @@ package object Datos {
     Vuelo("CO", 119, "TPA", 14, 20, "MSY", 14, 54, 0),
     Vuelo("CO", 497, "BOS", 17, 0, "DEN", 19, 50, 0),
     Vuelo("DL", 864, "MSY", 6, 35, "PHL", 11, 50, 1),
+
     Vuelo("DL", 548, "ATL", 13, 44, "RDU", 15, 0, 0),
     Vuelo("DL", 309, "DFW", 15, 1, "DEN", 15, 55, 0),
     Vuelo("DL", 648, "PHX", 8, 30, "PHL", 16, 15, 1),
@@ -3809,7 +3814,7 @@ package object Datos {
 
   //longitud 500
 
-  val vuelosD1= List(
+ val vuelosD1= List(
     Vuelo("HP", 548, "PHX", 18, 17, "DFW", 11, 45, 0),
     Vuelo("HP", 24, "PHX", 14, 30, "LAX", 14, 50, 0),
     Vuelo("HP", 14, "PHX", 6, 50, "LAX", 10, 6, 0),
@@ -4312,7 +4317,7 @@ package object Datos {
     Vuelo("PA", 436, "MIA", 17, 35, "BOS", 10, 56, 0)
   )
 
-  val vuelosD2= List(
+/*  val vuelosD2= List(
     Vuelo("PA", 427, "JFK", 14, 45, "MIA", 17, 57, 0),
     Vuelo("PA", 482, "LAX", 18, 0, "SFO", 19, 17, 0),
     Vuelo("PA", 429, "BOS", 14, 20, "MIA", 17, 44, 0),
@@ -5316,5 +5321,5 @@ package object Datos {
     Vuelo("WN", 603, "LAX", 7, 0, "BNA", 13, 55, 1),
     Vuelo("WN", 663, "STL", 21, 20, "HOU", 13, 15, 0),
     Vuelo("WN", 952, "LAX", 11, 15, "PHX", 13, 25, 0)
-  )
+  )*/
 }

@@ -2,19 +2,8 @@
 Miguel Ángel Salcedo - 2242786
 José Daniel Trujillo - 2225611*/
 
+import Datos._
 package object Itinerarios{
-
-  case class Aeropuerto (Cod: String , X: Int , Y: Int , GMT: Int )
-  /*(Cod:Código del Aeropuerto, X:Coordenada en X, Y:Coordenada en Y, 
-  GMT: Entero que representa la hora)*/
-
-  case class Vuelo (Aln: String , Num: Int , Org: String , HS: Int , MS: Int , Dst: String , HL: Int , ML: Int , Esc: Int )
-  /*(Aln: Nombre Aerolínea, Num: Número de Vuelo, Org: Código de Aeropuerto de Origen,
-  HS: Hora (hh) local de salida, MS: Minutos (mm) de hora local de salida,
-  Dst: Código de Aeropuerto de destino, HL: Hora (hh) local de llegada, 
-  ML: Minutos (mm) de hora local de llegada, Esc: Número de escalas (mismo avión))*/
-  
-  type Itinerario = List[Vuelo]
 
   /** Dada una lista de todos los vuelos disponibles y una lista 
     * de todos los aeropuertos, crea una función que calcula todos
@@ -145,8 +134,7 @@ package object Itinerarios{
       val listaEntre = listaIt(cod1, cod2)
       val listaCita = listaEntre.filter(itinerario => (
         ((itinerario.last.HL*60)+itinerario.last.ML)<=((HC*60)+MC))
-      )
-      
+      )      
       if (listaCita.isEmpty)(List.empty[Vuelo])
       else ((listaCita.sortBy(itinerario => (itinerario.head.HS+itinerario.head.MS))).last)
     }

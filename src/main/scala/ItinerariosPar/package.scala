@@ -4,6 +4,7 @@ José Daniel Trujillo - 2225611*/
 
 import common._
 import Itinerarios._
+import Datos._
 import scala.collection.parallel.immutable._
 import scala.collection.parallel.CollectionConverters._
 
@@ -193,39 +194,55 @@ package object ItinerariosPar{
   def itinerariosSalidaPar(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String,Int,Int) => Itinerario = {
     val listaIt = itinerariosPar(vuelos,aeropuertos)
     def calcularItinerario(cod1:String, cod2:String, HC:Int ,MC:Int):Itinerario={
-      val listaEntre = listaIt(cod1, cod2)
-      val listaCita = listaEntre.filter(itinerario => (((itinerario.last.HL*60)+itinerario.last.ML)<=((HC*60)+MC)))
-      if (listaCita.isEmpty)(List.empty[Vuelo])
-      else ((listaCita.sortBy(itinerario => (itinerario.head.HS+itinerario.head.MS))).last)
+      val listaEntre = listaIt(cod1, cod2).par
+      val listaCita = listaEntre.filter(itinerario => (
+        ((itinerario.last.HL*60)+itinerario.last.ML)<=((HC*60)+MC))
+      )
+      
+      def llegaACita(lista: List[Itinerario]): Itinerario ={
+        val ordenada = lista.sortBy(itinerario => (itinerario.head.HS+itinerario.head.MS))
+        if (ordenada.size > 0) (ordenada.last)
+        else (List.empty[Vuelo])
+      }
+
+      val listaCitaSeq: List[Itinerario] = listaCita.toSeq.toList
+      if (listaCitaSeq.isEmpty)(List.empty[Vuelo])
+      else {
+        val sizeLista = listaCitaSeq.size
+        sizeLista match {
+          case 0 => List.empty[Vuelo]
+          case 1 => listaCitaSeq.head
+          case 2 => {
+            val (parte1,parte2) = parallel(
+              llegaACita(listaCitaSeq.slice(0, 1)),
+              llegaACita(listaCitaSeq.slice(1, 2))
+            )
+            val secuenciales = List(parte1,parte2)
+            llegaACita(secuenciales)
+          }
+          case 3 => {
+            val paralelas = List(
+              task(llegaACita(listaCitaSeq.slice(0, 1))),
+              task(llegaACita(listaCitaSeq.slice(1, 2))),
+              task(llegaACita(listaCitaSeq.slice(2, 3)))
+            )
+            val secuenciales = paralelas.map(x => x.join())
+            llegaACita(secuenciales)
+          }
+          case _ => {
+            val tamaño = math.ceil(sizeLista.toDouble / 2).toInt
+            val (parte1,parte2,parte3,parte4) = parallel(
+              llegaACita(listaCitaSeq.slice(0, tamaño)),
+              llegaACita(listaCitaSeq.slice(tamaño, tamaño*2)),
+              llegaACita(listaCitaSeq.slice(tamaño*2, tamaño*3)),
+              llegaACita(listaCitaSeq.slice(tamaño*3, listaCita.size))
+            )
+            val secuenciales = List(parte1,parte2,parte3,parte4)
+            llegaACita(secuenciales)
+          }
+        }        
+      }
     }
     calcularItinerario
   }
-
-  /*def itinerariosTiempoPar2(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
-    val listaIt = itinerariosPar(vuelos,aeropuertos)
-    def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
-      def tiempoItinerario (it:Itinerario, arpt:List[Aeropuerto]): Int = {
-        val vInicio = it.head
-        val vFin = it.last
-        val GMTSalidaLista = (for(a <- arpt if vInicio.Org == a.Cod) yield task(a))
-        val GMTLlegadaLista = (for(a <- arpt if vFin.Dst == a.Cod) yield task(a))
-        val GMTSalida = GMTSalidaLista.map(y => y.join()).head.GMT
-        val GMTLlegada = GMTLlegadaLista.map(y => y.join()).head.GMT
-
-        val hSalida  = (vInicio.HS - (GMTSalida/100)*60) + vInicio.MS
-        val hLlegada = (vFin.HS - (GMTLlegada/100)*60) + vFin.MS
-        
-        if (hLlegada <= hSalida) (hLlegada+(60*24)-hSalida)
-        else (hLlegada-hSalida)
-      }
-
-      val listaEntre = listaIt(cod1, cod2).par
-      if (listaEntre.length<=3)(itinerariosTiempo(vuelos,aeropuertos)(cod1, cod2))
-      else{
-        listaEntre.sortBy(it => (tiempoItinerario(it,aeropuertos)))
-        
-      }
-    }
-    buscarItinerarios
-  }*/
 }

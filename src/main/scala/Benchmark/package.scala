@@ -4,6 +4,7 @@ José Daniel Trujillo - 2225611*/
 
 import Itinerarios._
 import ItinerariosPar._
+import Datos._
 import scala.collection.parallel.CollectionConverters._
 import org.scalameter._
 
@@ -17,12 +18,14 @@ package object Benchmark {
           KeyValue(Key.exec.maxWarmupRuns -> 20),
           KeyValue(Key.verbose -> false)
         ) withWarmer(new Warmer.Default) measure (itinerarios(vuelos,aeropuertos)(cod1,cod2))
+        println("Itinerios secuencial, cantidad: "+(itinerarios(vuelos,aeropuertos)(cod1,cod2)).size)
 
         val timeA2 = config(
           KeyValue(Key.exec.minWarmupRuns -> 10),
           KeyValue(Key.exec.maxWarmupRuns -> 20),
           KeyValue(Key.verbose -> false)
         ) withWarmer(new Warmer.Default) measure (itinerariosPar(vuelos,aeropuertos)(cod1,cod2))
+        println("Itinerios paralelo, cantidad: "+(itinerariosPar(vuelos,aeropuertos)(cod1,cod2)).size)
 
         val speedUp= timeA1.value/timeA2.value
         (timeA1.value, timeA2.value, speedUp)
@@ -34,12 +37,14 @@ package object Benchmark {
           KeyValue(Key.exec.maxWarmupRuns -> 20),
           KeyValue(Key.verbose -> false)
         ) withWarmer(new Warmer.Default) measure (itinerariosTiempo(vuelos,aeropuertos)(cod1,cod2))
+        println("Itinerios Tiempo secuencial, cantidad: "+(itinerariosTiempo(vuelos,aeropuertos)(cod1,cod2)).size)
 
         val timeA2 = config(
           KeyValue(Key.exec.minWarmupRuns -> 10),
           KeyValue(Key.exec.maxWarmupRuns -> 20),
           KeyValue(Key.verbose -> false)
         ) withWarmer(new Warmer.Default) measure (itinerariosTiempoPar(vuelos,aeropuertos)(cod1,cod2))
+        println("Itinerios TIempo paralelo, cantidad: "+(itinerariosTiempoPar(vuelos,aeropuertos)(cod1,cod2)).size)
 
         val speedUp= timeA1.value/timeA2.value
         (timeA1.value, timeA2.value, speedUp)
@@ -86,12 +91,14 @@ package object Benchmark {
       KeyValue(Key.exec.maxWarmupRuns -> 20),
       KeyValue(Key.verbose -> false)
     ) withWarmer(new Warmer.Default) measure (itinerariosSalida(vuelos,aeropuertos)(cod1,cod2,HC,MC))
+    println("Itinerios Salida secuencial, cantidad: "+(itinerariosSalida(vuelos,aeropuertos)(cod1,cod2,HC,MC)).size)
 
     val timeA2 = config(
       KeyValue(Key.exec.minWarmupRuns -> 10),
       KeyValue(Key.exec.maxWarmupRuns -> 20),
       KeyValue(Key.verbose -> false)
     ) withWarmer(new Warmer.Default) measure (itinerariosSalidaPar(vuelos,aeropuertos)(cod1,cod2,HC,MC))
+    println("Itinerios Salida secuencial, cantidad: "+(itinerariosSalidaPar(vuelos,aeropuertos)(cod1,cod2,HC,MC)).size)
 
     val speedUp= timeA1.value/timeA2.value
     (timeA1.value, timeA2.value, speedUp)

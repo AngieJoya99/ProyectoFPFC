@@ -6,7 +6,14 @@ import Benchmark._
 
 object Main {
   def main(args: Array[String]): Unit = {
+
     
+    val itSalidaCurso = itinerariosSalidaPar(vuelosCurso,aeropuertosCurso)
+    val itsal1 = itSalidaCurso("CTG","PTY",11, 40)
+    val itsal2 = itSalidaCurso("CTG","PTY",11, 55)
+    val itsal3 = itSalidaCurso("CTG","PTY",10,30)
+    println("Par\nitsal1 = "+itsal1+"\n"+"itsal2 = "+itsal2+"\n"+"itsal3 = "+itsal3)
+
     /*
     //Pruebas Secuenciales
     val itsCurso = itinerariosPar(vuelosCurso,aeropuertosCurso)
@@ -46,15 +53,16 @@ object Main {
     val itsal2 = itSalidaCurso("CTG","PTY",11, 55)
     val itsal3 = itSalidaCurso("CTG","PTY",10,30)
     println("\nitsal1 = "+itsal1+"\n"+"itsal2 = "+itsal2+"\n"+"itsal3 = "+itsal3)
-    */
     
-    /*println(compararItineratios(1,vuelosCurso, aeropuertosCurso, "MID", "SVCS"))
-    println(compararItineratios(1,vuelosCurso, aeropuertosCurso, "CLO", "SVCS"))
-    println(compararItineratios(1,vuelosCurso, aeropuertosCurso, "CLO","SVO"))
-    println(compararItineratios(1,vuelosCurso, aeropuertosCurso, "CLO", "MEX"))
-    println(compararItineratios(1,vuelosCurso, aeropuertosCurso, "CTG","PTY"))
-
-    println("Longitud 15: "+compararItineratios(1,vuelosA1, aeropuertos, "HOU", "MSY"))
+    
+    println(compararItineratios(2,vuelosCurso, aeropuertosCurso, "MID", "SVCS"))
+    println(compararItineratios(2,vuelosCurso, aeropuertosCurso, "CLO", "SVCS"))
+    println(compararItineratios(2,vuelosCurso, aeropuertosCurso, "CLO","SVO"))
+    println(compararItineratios(2,vuelosCurso, aeropuertosCurso, "CLO", "MEX"))
+    println(compararItineratios(2,vuelosCurso, aeropuertosCurso, "CTG","PTY"))
+    
+    
+    println("Itinerarios Tiempo\nLongitud 15: "+compararItineratios(2,vuelosA1, aeropuertos, "HOU", "MSY"))
     println("Longitud 15: "+compararItineratios(1,vuelosA2, aeropuertos, "SFO", "ORD"))
     println("Longitud 15: "+compararItineratios(1,vuelosA3, aeropuertos, "DFW", "ORD"))
     println("Longitud 15: "+compararItineratios(1,vuelosA4, aeropuertos, "ORD", "LAX"))
@@ -66,23 +74,26 @@ object Main {
     println("Longitud 40: "+compararItineratios(1,vuelosB4, aeropuertos, "LAX", "SEA"))
     println("Longitud 40: "+compararItineratios(1,vuelosB5, aeropuertos, "DEN", "SEA"))
     
+    
     println("Longitud 100: "+compararItineratios(1,vuelosC1, aeropuertos, "ATL", "LAX"))
     println("Longitud 100: "+compararItineratios(1,vuelosC2, aeropuertos, "BOS", "ATL"))
     println("Longitud 100: "+compararItineratios(1,vuelosC3, aeropuertos, "ATL", "MIA"))
     println("Longitud 100: "+compararItineratios(1,vuelosC4, aeropuertos, "BOS", "DFW"))
     println("Longitud 100: "+compararItineratios(1,vuelosC5, aeropuertos, "ATL", "LAX"))
-    */
+    
 
     println("Longitud 200: "+compararItineratios(1,(vuelosC1++vuelosC2), aeropuertos, "ATL", "ATL"))
     println("Longitud 200: "+compararItineratios(1,(vuelosC2++vuelosC3), aeropuertos, "BOS", "MIA"))
     println("Longitud 200: "+compararItineratios(1,(vuelosC3++vuelosC4), aeropuertos, "ATL", "DFW"))
     println("Longitud 200: "+compararItineratios(1,(vuelosC4++vuelosC5), aeropuertos, "BOS", "LAX"))
     println("Longitud 200: "+compararItineratios(1,(vuelosC1++vuelosC5), aeropuertos, "ATL", "LAX"))
-
+    
+    
+    //println("Longitud 200: "+compararItineratios(4,(vuelosC1++vuelosC2), aeropuertos,"ATL","LAX"))
     /*println("Longitud 200: "+compararItineratios(1,vuelosD1, aeropuertos, "PHX", "DTW"))
     println("Longitud 200: "+compararItineratios(1,vuelosD2, aeropuertos, "STL", "MIA"))
     println("Longitud 200: "+compararItineratios(1,vuelosD3, aeropuertos, "ORD", "DEN"))*/
-    
+    */
 
 
   }
