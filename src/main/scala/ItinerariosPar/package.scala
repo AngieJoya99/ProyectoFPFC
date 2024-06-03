@@ -84,7 +84,7 @@ package object ItinerariosPar{
         )
 
         val listaMenorTiempo = (part1++part2++part3++part4).sortBy(iti => tiempoItinerario(iti,aeropuertos)).take(3)
-        listaMenorTiempo
+        listaMenorTiempo.take(3)
       }
     }
     buscarItinerarios
@@ -126,7 +126,7 @@ package object ItinerariosPar{
           ordenarPorEscala(particion4).take(3)
         )
         val listaMenorEsc = ordenarPorEscala(part1Ord ++ part2Ord ++ part3Ord ++ part4Ord).take(3)
-        listaMenorEsc
+        listaMenorEsc.take(3)
       }
     }   
     encontrarMenorEsc
@@ -209,11 +209,24 @@ package object ItinerariosPar{
       if (listaCitaSeq.isEmpty)(List.empty[Vuelo])
       else {
         val sizeLista = listaCitaSeq.size
-        val paralelas = (for (i <- 0 until sizeLista) yield (
-          task(llegaACita(listaCitaSeq.slice(i, i+1)))
-        )).toList
-        val secuenciales = paralelas.map(x => x.join())
-        llegaACita(secuenciales)
+        if (sizeLista <= 3 ){
+          val paralelas = (for (i <- 0 until sizeLista) yield (
+            task(llegaACita(listaCitaSeq.slice(i, i+1)))
+          )).toList
+          val secuenciales = paralelas.map(x => x.join())
+          llegaACita(secuenciales)
+        }
+        else{
+          val tamaño = math.ceil(sizeLista.toDouble / 4).toInt
+            val (parte1,parte2,parte3,parte4) = parallel(
+              llegaACita(listaCitaSeq.slice(0, tamaño)),
+              llegaACita(listaCitaSeq.slice(tamaño, tamaño*2)),
+              llegaACita(listaCitaSeq.slice(tamaño*2, tamaño*3)),
+              llegaACita(listaCitaSeq.slice(tamaño*3, listaCita.size))
+            )
+            val secuenciales = List(parte1,parte2,parte3,parte4)
+            llegaACita(secuenciales)
+        }        
       }
     }
     calcularItinerario
