@@ -10,7 +10,7 @@ import org.scalameter._
 
 package object Benchmark {
 
-  def compararItineratios(funcion: Int, vuelos: List[Vuelo], aeropuertos: List[Aeropuerto], cod1: String, cod2: String): (Double,Double, Double) ={
+  def compararItineratios(funcion: Int, vuelos: List[Vuelo], aeropuertos: List[Aeropuerto], cod1: String, cod2: String): (String,String,Double,Double, Double) ={
     funcion match{
       case 1 => {
         val timeA1 = config(
@@ -28,7 +28,7 @@ package object Benchmark {
         println("Itinerios paralelo, cantidad: "+(itinerariosPar(vuelos,aeropuertos)(cod1,cod2)).size)
 
         val speedUp= timeA1.value/timeA2.value
-        (timeA1.value, timeA2.value, speedUp)
+        (cod1,cod2,timeA1.value, timeA2.value, speedUp)
       }
 
       case 2 => {
@@ -47,7 +47,7 @@ package object Benchmark {
         println("Itinerios TIempo paralelo, cantidad: "+(itinerariosTiempoPar(vuelos,aeropuertos)(cod1,cod2)).size)
 
         val speedUp= timeA1.value/timeA2.value
-        (timeA1.value, timeA2.value, speedUp)
+        (cod1,cod2,timeA1.value, timeA2.value, speedUp)
       }
       case 3 => {
         val timeA1 = config(
@@ -63,7 +63,7 @@ package object Benchmark {
         ) withWarmer(new Warmer.Default) measure (itinerariosEscalasPar(vuelos,aeropuertos)(cod1,cod2))
 
         val speedUp= timeA1.value/timeA2.value
-        (timeA1.value, timeA2.value, speedUp)
+        (cod1,cod2,timeA1.value, timeA2.value, speedUp)
       }
       case 4 => {
         val timeA1 = config(
@@ -79,29 +79,27 @@ package object Benchmark {
         ) withWarmer(new Warmer.Default) measure (itinerariosAirePar(vuelos,aeropuertos)(cod1,cod2))
 
         val speedUp= timeA1.value/timeA2.value
-        (timeA1.value, timeA2.value, speedUp)
+        (cod1,cod2,timeA1.value, timeA2.value, speedUp)
       }
     }    
   }
 
 
-  def compararItineratiosSalida(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto], cod1: String, cod2: String, HC:Int ,MC:Int): (Double,Double, Double) ={
+  def compararItineratiosSalida(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto], cod1: String, cod2: String, HC:Int ,MC:Int): (String,String,Double,Double, Double) ={
     val timeA1 = config(
       KeyValue(Key.exec.minWarmupRuns -> 10),
       KeyValue(Key.exec.maxWarmupRuns -> 20),
       KeyValue(Key.verbose -> false)
     ) withWarmer(new Warmer.Default) measure (itinerariosSalida(vuelos,aeropuertos)(cod1,cod2,HC,MC))
-    println("Itinerios Salida secuencial, cantidad: "+(itinerarios(vuelos,aeropuertos)(cod1,cod2)).size)
-
+    
     val timeA2 = config(
       KeyValue(Key.exec.minWarmupRuns -> 10),
       KeyValue(Key.exec.maxWarmupRuns -> 20),
       KeyValue(Key.verbose -> false)
     ) withWarmer(new Warmer.Default) measure (itinerariosSalidaPar(vuelos,aeropuertos)(cod1,cod2,HC,MC))
-    println("Itinerios Salida paralelo, cantidad: "+(itinerariosPar(vuelos,aeropuertos)(cod1,cod2)).size)
-
+    
     val speedUp= timeA1.value/timeA2.value
-    (timeA1.value, timeA2.value, speedUp)
+    (cod1,cod2,timeA1.value, timeA2.value, speedUp)
   }
   
 }

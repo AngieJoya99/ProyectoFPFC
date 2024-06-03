@@ -6,19 +6,10 @@ import Benchmark._
 
 object Main {
   def main(args: Array[String]): Unit = {
+
     
-    val itSalidaCurso = itinerariosSalidaPar(vuelosCurso,aeropuertosCurso)
-    val itsal1 = itSalidaCurso("CTG","PTY",11, 40)
-    val itsal2 = itSalidaCurso("CTG","PTY",11, 55)
-    val itsal3 = itSalidaCurso("CTG","PTY",10,30)
-    println("Par\nitsal1 = "+itsal1+"\n"+"itsal2 = "+itsal2+"\n"+"itsal3 = "+itsal3)
-
-    println("Longitud 200: "+compararItineratiosSalida((vuelosC1++vuelosC2), aeropuertos, "ATL", "LAX", 10, 50))
-    println("Longitud 200: "+compararItineratiosSalida((vuelosC2++vuelosC3), aeropuertos, "BOS", "MIA", 8, 45))
-    println("Longitud 200: "+compararItineratiosSalida((vuelosC3++vuelosC4), aeropuertos, "ATL", "DFW", 7, 20))
-    println("Longitud 200: "+compararItineratiosSalida((vuelosC4++vuelosC5), aeropuertos, "BOS", "LAX", 6, 0))
-    println("Longitud 200: "+compararItineratiosSalida((vuelosC1++vuelosC5), aeropuertos, "ATL", "LAX", 12, 20))
-
+    
+        
     /*
     //Pruebas Secuenciales
     val itsCurso = itinerariosPar(vuelosCurso,aeropuertosCurso)
@@ -92,13 +83,17 @@ object Main {
     println("Longitud 200: "+compararItineratios(1,(vuelosC3++vuelosC4), aeropuertos, "ATL", "DFW"))
     println("Longitud 200: "+compararItineratios(1,(vuelosC4++vuelosC5), aeropuertos, "BOS", "LAX"))
     println("Longitud 200: "+compararItineratios(1,(vuelosC1++vuelosC5), aeropuertos, "ATL", "LAX"))
-    
-    
-    //println("Longitud 200: "+compararItineratios(4,(vuelosC1++vuelosC2), aeropuertos,"ATL","LAX"))
-    /*println("Longitud 200: "+compararItineratios(1,vuelosD1, aeropuertos, "PHX", "DTW"))
-    println("Longitud 200: "+compararItineratios(1,vuelosD2, aeropuertos, "STL", "MIA"))
-    println("Longitud 200: "+compararItineratios(1,vuelosD3, aeropuertos, "ORD", "DEN"))*/
+       
     */
+    for (x <- 1 to 5) yield {
+      println(compararItineratiosSalida((vuelosB1++vuelosA1), aeropuertos, "BNA", "ORD", 10, 50))
+      println(compararItineratiosSalida((vuelosB2++vuelosA2), aeropuertos, "DFW", "ORD", 8, 45))
+      println(compararItineratiosSalida((vuelosB3++vuelosA3), aeropuertos, "ORD", "DFW", 7, 20))
+      println(compararItineratiosSalida((vuelosB4++vuelosA4), aeropuertos, "LAX", "SEA", 6, 0))
+      println(compararItineratiosSalida((vuelosB5++vuelosA5), aeropuertos, "DEN", "SEA", 12, 20))
+
+      
+    }
 
 
   }
