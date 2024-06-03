@@ -209,38 +209,11 @@ package object ItinerariosPar{
       if (listaCitaSeq.isEmpty)(List.empty[Vuelo])
       else {
         val sizeLista = listaCitaSeq.size
-        sizeLista match {
-          case 0 => List.empty[Vuelo]
-          case 1 => listaCitaSeq.head
-          case 2 => {
-            val (parte1,parte2) = parallel(
-              llegaACita(listaCitaSeq.slice(0, 1)),
-              llegaACita(listaCitaSeq.slice(1, 2))
-            )
-            val secuenciales = List(parte1,parte2)
-            llegaACita(secuenciales)
-          }
-          case 3 => {
-            val paralelas = List(
-              task(llegaACita(listaCitaSeq.slice(0, 1))),
-              task(llegaACita(listaCitaSeq.slice(1, 2))),
-              task(llegaACita(listaCitaSeq.slice(2, 3)))
-            )
-            val secuenciales = paralelas.map(x => x.join())
-            llegaACita(secuenciales)
-          }
-          case _ => {
-            val tamaño = math.ceil(sizeLista.toDouble / 2).toInt
-            val (parte1,parte2,parte3,parte4) = parallel(
-              llegaACita(listaCitaSeq.slice(0, tamaño)),
-              llegaACita(listaCitaSeq.slice(tamaño, tamaño*2)),
-              llegaACita(listaCitaSeq.slice(tamaño*2, tamaño*3)),
-              llegaACita(listaCitaSeq.slice(tamaño*3, listaCita.size))
-            )
-            val secuenciales = List(parte1,parte2,parte3,parte4)
-            llegaACita(secuenciales)
-          }
-        }        
+        val paralelas = (for (i <- 0 until sizeLista) yield (
+          task(llegaACita(listaCitaSeq.slice(i, i+1)))
+        )).toList
+        val secuenciales = paralelas.map(x => x.join())
+        llegaACita(secuenciales)
       }
     }
     calcularItinerario

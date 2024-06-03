@@ -98,7 +98,7 @@ package object Benchmark {
       KeyValue(Key.exec.maxWarmupRuns -> 20),
       KeyValue(Key.verbose -> false)
     ) withWarmer(new Warmer.Default) measure (itinerariosSalidaPar(vuelos,aeropuertos)(cod1,cod2,HC,MC))
-    println("Itinerios Salida secuencial, cantidad: "+(itinerariosSalidaPar(vuelos,aeropuertos)(cod1,cod2,HC,MC)).size)
+    println("Itinerios Salida paralelo, cantidad: "+(itinerariosSalidaPar(vuelos,aeropuertos)(cod1,cod2,HC,MC)).size)
 
     val speedUp= timeA1.value/timeA2.value
     (timeA1.value, timeA2.value, speedUp)

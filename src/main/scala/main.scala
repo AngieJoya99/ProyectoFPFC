@@ -6,13 +6,18 @@ import Benchmark._
 
 object Main {
   def main(args: Array[String]): Unit = {
-
     
     val itSalidaCurso = itinerariosSalidaPar(vuelosCurso,aeropuertosCurso)
     val itsal1 = itSalidaCurso("CTG","PTY",11, 40)
     val itsal2 = itSalidaCurso("CTG","PTY",11, 55)
     val itsal3 = itSalidaCurso("CTG","PTY",10,30)
     println("Par\nitsal1 = "+itsal1+"\n"+"itsal2 = "+itsal2+"\n"+"itsal3 = "+itsal3)
+
+    println("Longitud 200: "+compararItineratiosSalida((vuelosC1++vuelosC2), aeropuertos, "ATL", "LAX", 10, 50))
+    println("Longitud 200: "+compararItineratiosSalida((vuelosC2++vuelosC3), aeropuertos, "BOS", "MIA", 8, 45))
+    println("Longitud 200: "+compararItineratiosSalida((vuelosC3++vuelosC4), aeropuertos, "ATL", "DFW", 7, 20))
+    println("Longitud 200: "+compararItineratiosSalida((vuelosC4++vuelosC5), aeropuertos, "BOS", "LAX", 6, 0))
+    println("Longitud 200: "+compararItineratiosSalida((vuelosC1++vuelosC5), aeropuertos, "ATL", "LAX", 12, 20))
 
     /*
     //Pruebas Secuenciales
