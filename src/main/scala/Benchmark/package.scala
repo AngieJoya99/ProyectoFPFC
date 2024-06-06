@@ -37,15 +37,13 @@ package object Benchmark {
           KeyValue(Key.exec.maxWarmupRuns -> 20),
           KeyValue(Key.verbose -> false)
         ) withWarmer(new Warmer.Default) measure (itinerariosTiempo(vuelos,aeropuertos)(cod1,cod2))
-        println("Itinerios Tiempo secuencial, cantidad: "+(itinerariosTiempo(vuelos,aeropuertos)(cod1,cod2)).size)
-
+        
         val timeA2 = config(
           KeyValue(Key.exec.minWarmupRuns -> 10),
           KeyValue(Key.exec.maxWarmupRuns -> 20),
           KeyValue(Key.verbose -> false)
         ) withWarmer(new Warmer.Default) measure (itinerariosTiempoPar(vuelos,aeropuertos)(cod1,cod2))
-        println("Itinerios TIempo paralelo, cantidad: "+(itinerariosTiempoPar(vuelos,aeropuertos)(cod1,cod2)).size)
-
+        
         val speedUp= timeA1.value/timeA2.value
         (cod1,cod2,timeA1.value, timeA2.value, speedUp)
       }

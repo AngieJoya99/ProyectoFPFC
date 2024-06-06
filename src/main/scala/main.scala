@@ -85,14 +85,14 @@ object Main {
     println("Longitud 200: "+compararItineratios(1,(vuelosC1++vuelosC5), aeropuertos, "ATL", "LAX"))
        
     */
-    for (x <- 1 to 5) yield {
-      println(compararItineratiosSalida((vuelosB1++vuelosA1), aeropuertos, "BNA", "ORD", 10, 50))
-      println(compararItineratiosSalida((vuelosB2++vuelosA2), aeropuertos, "DFW", "ORD", 8, 45))
-      println(compararItineratiosSalida((vuelosB3++vuelosA3), aeropuertos, "ORD", "DFW", 7, 20))
-      println(compararItineratiosSalida((vuelosB4++vuelosA4), aeropuertos, "LAX", "SEA", 6, 0))
-      println(compararItineratiosSalida((vuelosB5++vuelosA5), aeropuertos, "DEN", "SEA", 12, 20))
-
-      
+    println("Prueba, Longitud 140")
+    for (x <- 1 to 4) yield {
+      println(compararItineratios(4,(vuelosC1++vuelosB1), aeropuertos, "ATL", "LAX"))
+      println(compararItineratios(4,(vuelosC2++vuelosB2), aeropuertos, "BOS", "ATL"))
+      println(compararItineratios(4,(vuelosC3++vuelosB3), aeropuertos, "ATL", "MIA"))
+      println(compararItineratios(4,(vuelosC4++vuelosB4), aeropuertos, "BOS", "DFW"))
+      println(compararItineratios(4,(vuelosC1++vuelosB5), aeropuertos, "ATL", "LAX"))
+       
     }
 
 

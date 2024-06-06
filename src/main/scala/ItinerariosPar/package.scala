@@ -50,7 +50,7 @@ package object ItinerariosPar{
     */
 
   def itinerariosTiempoPar(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
-    val listaIt = itinerariosPar8(vuelos,aeropuertos)
+    val listaIt = itinerariosPar(vuelos,aeropuertos)
     def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
 
       def tiempoItinerario (it:Itinerario, arpt:List[Aeropuerto]): Int = {
@@ -140,7 +140,7 @@ package object ItinerariosPar{
     */
 
     def itinerariosAirePar(vuelos: List[Vuelo], aeropuertos: List[Aeropuerto]): (String, String) => List[Itinerario] = {
-    val listaIt = itinerariosPar8(vuelos,aeropuertos)
+    val listaIt = itinerariosPar(vuelos,aeropuertos)
 
     def buscarItinerarios(cod1: String, cod2: String): List[Itinerario] = {
 
